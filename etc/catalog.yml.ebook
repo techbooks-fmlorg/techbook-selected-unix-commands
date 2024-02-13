@@ -1,0 +1,27 @@
+PREDEF:
+  - 00-preface.re
+
+## 本文
+CHAPS:
+  - 50-cmd-a.re
+  - 50-cmd-b.re
+  - 50-cmd-c.re
+  - 50-cmd-d.re
+  - 50-cmd-e.re
+  - 50-cmd-f.re
+  - 50-cmd-g.re
+  - 50-cmd-l.re
+  - 50-cmd-m.re
+  - 50-cmd-p.re
+  - 50-cmd-r.re
+  - 50-cmd-s.re
+  - 50-cmd-t.re
+  - 50-cmd-u.re
+  - 50-cmd-w.re
+
+## 付録
+APPENDIX:
+
+## あとがき
+POSTDEF:
+  - 99-postscript.re

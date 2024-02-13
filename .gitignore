@@ -1,0 +1,10 @@
+.DS_Store
+*~
+*.bak
+*.yml.orig
+#*.erb.orig
+rubygems/*
+tmp/*
+selected-unix-commands-pdf/*
+selected-unix-commands-md/*
+techbook-utils
