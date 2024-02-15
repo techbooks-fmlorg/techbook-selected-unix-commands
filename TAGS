@@ -9,3 +9,7 @@ release-0-1-0
 	- tuned configurations
 	- moved configurations in ./etc/ and switch config for each running mode
 	- we can genearte actual printing and ebook pdf
+
+release-0-2-0
+	v0.2.0
+	- write up preface and postscript anyway.
