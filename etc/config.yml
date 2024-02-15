@@ -42,9 +42,9 @@ additional:
   # 詳しくはこのページを参照：
   # https://esa-pages.io/p/sharing/13039/posts/115/7fbe936149a836eac678.html#奥付の記載
   - key:     発行者   # サークル名ではなく個人名（ペンネーム可）
-    value:   
+    value:   深町賢一
   - key:     連絡先   # メールアドレス推奨
-    value:
+    value:   infra-club@cist.fml.org
     ### 連絡先の例：
     #value:
     #  - xxxxx@example.com          # メールアドレス
@@ -80,7 +80,7 @@ additional:
 # a-pht, pht: 撮影責任者
 # a-pbl, pbl: 出版社（発行所）
 # a-prt, prt: 印刷所
-prt: ○○印刷所
+prt: 株式会社イシダ印刷
 # a-red, red: 項目の枠組起草者
 # a-rev, rev: 評論者
 # a-spn, spn: 援助者
