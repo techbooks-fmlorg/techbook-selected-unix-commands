@@ -44,7 +44,9 @@ additional:
   - key:     発行者   # サークル名ではなく個人名（ペンネーム可）
     value:   深町賢一
   - key:     連絡先   # メールアドレス推奨
-    value:   infra-club@cist.fml.org
+    value:
+        - infra-club@cist.fml.org
+        - https://selected-unix-commands.techbooks.fml.org/
     ### 連絡先の例：
     #value:
     #  - xxxxx@example.com          # メールアドレス
