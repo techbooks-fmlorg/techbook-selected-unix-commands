@@ -18,3 +18,8 @@ release-0-3-0
 	v0.3.0
 	- enabled the github pages
 	- add the github pages URL
+
+release-0-4-0
+	v0.4.0
+	- updated documentation on how to build
+	- add distribution pdf files in the github pages
