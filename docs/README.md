@@ -13,6 +13,9 @@ ITインフラ修行中の三年生(公立千歳科学技術大学ITインフラ
 電子版も印刷版もPDFを配布しています。
 以下のリンクから入手してください
 
+- [電子版(v0.3.0)](Archives/selected-unix-commands.ebook.0.3.0.pdf)
+- [印刷版(v0.3.0)](Archives/selected-unix-commands.print.0.3.0.pdf)
+
 なお、学内の方は、印刷版を無料配布しているので手に取ってみてください。
 
 
