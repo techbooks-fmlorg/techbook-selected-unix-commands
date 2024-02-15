@@ -13,3 +13,8 @@ release-0-1-0
 release-0-2-0
 	v0.2.0
 	- write up preface and postscript anyway.
+
+release-0-3-0
+	v0.3.0
+	- enabled the github pages
+	- add the github pages URL
