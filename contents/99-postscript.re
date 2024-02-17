@@ -35,7 +35,7 @@ ITインフラ修行自体は春学期からやっているわけですが、
 
 
 
-//indepimage[cist-landscape][ラピダス建設中のクレーンが工場の向こうに見える千歳市美々より(左端が大学)][pos=b]
+//indepimage[cist-landscape-grayscale][ラピダス建設中のクレーンが工場の向こうに見える千歳市美々より(左端が大学)][pos=b]
 
 
 
