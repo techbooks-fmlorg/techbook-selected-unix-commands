@@ -18,7 +18,7 @@
 
 
 
-===== 実行結果　
+===== 実行結果　（成功パターン:ip 10.252.0.11から応答があったとき）
 
 
 
@@ -31,10 +31,18 @@
   64 bytes from 10.252.0.11: icmp_seq=5 ttl=64 time=0.038 ms
   64 bytes from 10.252.0.11: icmp_seq=6 ttl=64 time=0.017 ms
   64 bytes from 10.252.0.11: icmp_seq=7 ttl=64 time=0.018 ms
-  ^C
+  ^C                                    ※Ctrl-Cを打ち込んだ行
   --- 10.252.0.11 ping statistics ---
   7 packets transmitted, 7 received, 0% packet loss, time 6151ms
   rtt min/avg/max/mdev = 0.017/0.027/0.042/0.010 ms
+
+  ------------------------------------------------------------------------
+  ※出力の読み方
+  icmp_seq:pingを送信した回数
+  ttl:ルータの通過数(初期値-通過数)
+  time:送受信の往復の時間
+  7 packets transmitted, 7 received, 0% packet loss, time 6151ms
+  →パケット損失が0%
 //}
 
 
@@ -50,7 +58,7 @@
 
 
 
-===== 実行結果　
+===== 実行結果　（失敗パターン:ip 10.252.0.127から応答がなかったとき）
 
 
 
@@ -62,10 +70,18 @@
   From 10.252.0.11 icmp_seq=4 Destination Host Unreachable
   From 10.252.0.11 icmp_seq=5 Destination Host Unreachable
   From 10.252.0.11 icmp_seq=6 Destination Host Unreachable
-  ^C
+  ^C                                    ※Ctrl-Cを打ち込んだ行
   --- 10.252.0.127 ping statistics ---
   7 packets transmitted, 0 received, +6 errors, 100% packet loss, time 6152ms
   pipe 4
+  
+  ------------------------------------------------------------------------
+  ※出力の読み方
+  icmp_seq:pingを送信した回数
+  ttl:ルータの通過数(初期値-通過数)
+  time:送受信の往復の時間
+  7 packets transmitted, 0 received, +6 errors, 100% packet loss, time 6152ms
+  →パケット損失が100%
 //}
 
 
