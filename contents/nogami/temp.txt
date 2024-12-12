@@ -1,0 +1,26 @@
+コピー用で完了したら削除します
+#@# 
+
+== command
+===== 実行例
+
+//list[][][fontsize=xx-small]{
+    
+//}
+===== 実行結果
+
+//list[][][fontsize=xx-small]{
+    
+//}
+=== オプション一覧
+====
+===== 実行例
+
+//list[][][fontsize=xx-small]{
+    
+//}
+===== 実行結果
+
+//list[][][fontsize=xx-small]{
+    
+//}
