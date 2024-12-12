@@ -11,7 +11,7 @@
 
 
 //list[][][fontsize=xx-small]{
-  ping 10.252.0.11
+  ping ipアドレス
 //}
 
 
@@ -23,6 +23,7 @@
 
 
 //list[][][fontsize=xx-small]{
+  $ ping 10.252.0.11
   PING 10.252.0.11 (10.252.0.11) 56(84) bytes of data.
   64 bytes from 10.252.0.11: icmp_seq=1 ttl=64 time=0.039 ms
   64 bytes from 10.252.0.11: icmp_seq=2 ttl=64 time=0.042 ms
@@ -46,23 +47,13 @@
 //}
 
 
-===== 実行例 
-
-
-
-//list[][][fontsize=xx-small]{
-  ping 10.252.0.127
-//}
-
-
-
-
 
 ===== 実行結果　（失敗パターン:ip 10.252.0.127から応答がなかったとき）
 
 
 
 //list[][][fontsize=xx-small]{
+  $ ping 10.252.0.127
   PING 10.252.0.127 (10.252.0.127) 56(84) bytes of data.
   From 10.252.0.11 icmp_seq=1 Destination Host Unreachable
   From 10.252.0.11 icmp_seq=2 Destination Host Unreachable
