@@ -1,0 +1,71 @@
+#@# 
+
+== ping
+
+1秒に1つのデータグラムを送信し、受信した応答内容を出力する。割り込みを受信したときに(Ctrl-C)、往復情報とパケット損失統計を計算し、簡約して出力する。ホスト間のネットワーク接続の安定性を検証する用途で利用する。
+
+
+
+===== 実行例 
+
+
+
+//list[][][fontsize=xx-small]{
+  ping 10.252.0.11
+//}
+
+
+
+
+
+===== 実行結果　
+
+
+
+//list[][][fontsize=xx-small]{
+  PING 10.252.0.11 (10.252.0.11) 56(84) bytes of data.
+  64 bytes from 10.252.0.11: icmp_seq=1 ttl=64 time=0.039 ms
+  64 bytes from 10.252.0.11: icmp_seq=2 ttl=64 time=0.042 ms
+  64 bytes from 10.252.0.11: icmp_seq=3 ttl=64 time=0.020 ms
+  64 bytes from 10.252.0.11: icmp_seq=4 ttl=64 time=0.018 ms
+  64 bytes from 10.252.0.11: icmp_seq=5 ttl=64 time=0.038 ms
+  64 bytes from 10.252.0.11: icmp_seq=6 ttl=64 time=0.017 ms
+  64 bytes from 10.252.0.11: icmp_seq=7 ttl=64 time=0.018 ms
+  ^C
+  --- 10.252.0.11 ping statistics ---
+  7 packets transmitted, 7 received, 0% packet loss, time 6151ms
+  rtt min/avg/max/mdev = 0.017/0.027/0.042/0.010 ms
+//}
+
+
+===== 実行例 
+
+
+
+//list[][][fontsize=xx-small]{
+  ping 10.252.0.127
+//}
+
+
+
+
+
+===== 実行結果　
+
+
+
+//list[][][fontsize=xx-small]{
+  PING 10.252.0.127 (10.252.0.127) 56(84) bytes of data.
+  From 10.252.0.11 icmp_seq=1 Destination Host Unreachable
+  From 10.252.0.11 icmp_seq=2 Destination Host Unreachable
+  From 10.252.0.11 icmp_seq=3 Destination Host Unreachable
+  From 10.252.0.11 icmp_seq=4 Destination Host Unreachable
+  From 10.252.0.11 icmp_seq=5 Destination Host Unreachable
+  From 10.252.0.11 icmp_seq=6 Destination Host Unreachable
+  ^C
+  --- 10.252.0.127 ping statistics ---
+  7 packets transmitted, 0 received, +6 errors, 100% packet loss, time 6152ms
+  pipe 4
+//}
+
+
