@@ -62,7 +62,7 @@ HTTPリクエストを利用してデータを取得する。ブラウザの代�
 
 
 //list[][][fontsize=xx-small]{
-  curl -o URL
+  curl -o 保存するファイル名 URL
 //}
 
 
