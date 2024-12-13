@@ -75,15 +75,18 @@ pであればカーソルの一つ下の行に、Pであればカーソルの一
 
 ===== 実行例1
 
+//list[][][fontsize=xx-small]{
 1 siritori|←カーソル位置 
 2 ringo
 3 gorira
 4 raion
 コマンド
 4yy
+//}
 
 ===== 実行例2
 
+//list[][][fontsize=xx-small]{
 実行例1の続き
 1 siritori
 2 ringo
@@ -92,8 +95,11 @@ pであればカーソルの一つ下の行に、Pであればカーソルの一
 5 |←カーソル位置 
 コマンド
 p
+//}
+
 ===== 実行結果
 
+//list[][][fontsize=xx-small]{
 1 siritori
 2 ringo
 3 gorira
@@ -103,7 +109,7 @@ p
 7 ringo
 8 gorira
 9 raion
-
+//}
 -------------------------------------
 
 実行例1
