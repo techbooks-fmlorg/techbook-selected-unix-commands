@@ -13,14 +13,14 @@ host コマンドともに入力するものを ip アドレスにすると実�
 
 
 //list[][][fontsize=xx-small]{
-  host 210.128.53.254
+  host <ip アドレス>
 //}
 
 
 
 
 
-===== 実行結果　
+===== 実行結果　(例：host 210.128.53.254 と入力した場合)
 
 
 
@@ -40,14 +40,14 @@ host コマンドともに入力するものを ip アドレスにすると実�
 
 
 //list[][][fontsize=xx-small]{
-  host portal.net.fml.org
+  host <ドメイン名>
 //}
 
 
 
 
 
-===== 実行結果　
+===== 実行結果　(例：host portal.net.fml.org と入力した場合)
 
 
 
