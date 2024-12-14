@@ -13,7 +13,7 @@ host コマンドともに入力するものを ip アドレスにすると実�
 
 
 //list[][][fontsize=xx-small]{
-  host <ip アドレス>
+  $ host <ip アドレス>
 //}
 
 
@@ -40,7 +40,7 @@ host コマンドともに入力するものを ip アドレスにすると実�
 
 
 //list[][][fontsize=xx-small]{
-  host <ドメイン名>
+  $ host <ドメイン名>
 //}
 
 
