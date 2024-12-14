@@ -25,12 +25,13 @@ host コマンドともに入力するものを ip アドレスにすると実�
 
 
 //list[][][fontsize=xx-small]{
+  $ host 210.128.53.254
   254.53.128.210.in-addr.arpa domain name pointer portal.net.fml.org.
 //}
 
 
 
-出力されるものの中で右端に表示されているものが入力した ip アドレスに紐づくドメイン名となる。
+出力されるもの (254.53.128.210. ...) の中で右端に表示されているものが入力した ip アドレスに紐づくドメイン名となる。
 この場合、host コマンドの後に入力した 210.128.53.254 という ip アドレスに紐づいているドメイン名は、「domain name pointer」の後に続く「portal.net.fml.org」という文字列がドメイン名となる。
 
 
@@ -52,12 +53,13 @@ host コマンドともに入力するものを ip アドレスにすると実�
 
 
 //list[][][fontsize=xx-small]{
+  $ host portal.net.fml.org
   portal.net.fml.org has address 210.128.53.254
 //}
 
 
 
-出力されるものの中で右端に表示されているものが入力したドメイン名に紐づく ip アドレスに紐づくドメイン名となる。
+出力されるもの (portal.net.fml.org has ...) の中で右端に表示されているものが入力したドメイン名に紐づく ip アドレスに紐づくドメイン名となる。
 この場合、host コマンドの後に入力した portal.net.fml.org というドメイン名に紐づいている ip アドレスは、「has address」の後に続く「210.128.53.254」という数字が ip アドレスとなる。
 
 

@@ -11,7 +11,7 @@
 
 
 //list[][][fontsize=xx-small]{
-  sort ex1.txt > output1.txt
+  $ sort ex1.txt > output1.txt
 //}
 
 
