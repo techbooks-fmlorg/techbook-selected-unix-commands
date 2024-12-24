@@ -5,7 +5,7 @@
 ===== 実行例
 
 //list[][][fontsize=xx-small]{
-$lsmem
+$ lsmem
 //}
 ===== 実行結果
 

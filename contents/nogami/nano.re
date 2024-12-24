@@ -10,7 +10,7 @@
 ===== 実行例
 
 //list[][][fontsize=xx-small]{
-$nano ファイル名
+$ nano ファイル名
 //}
 
 ===== 実行結果

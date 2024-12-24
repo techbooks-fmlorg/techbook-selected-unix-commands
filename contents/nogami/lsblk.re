@@ -6,7 +6,7 @@
 ===== 実行例
 
 //list[][][fontsize=xx-small]{
-$lsblk
+$ lsblk
 //}
 ===== 実行結果
 

@@ -31,8 +31,8 @@ ipコマンドで利用可能なオブジェクト・オプションについて
 ===== 実行例
 
 //list[][][fontsize=xx-small]{
-$ip address
-$ip a  
+$ ip address
+$ ip a  
 ※どちらも同じ結果が出力される。
 //}
 ===== 実行結果
@@ -66,8 +66,8 @@ link/ether:MACアドレス(各ネットワークインターフェースに割�
 ===== 実行例
 
 //list[][][fontsize=xx-small]{
-$ip route
-$ip r
+$ ip route
+$ ip r
 ※どちらも同じ結果が出力される。
 //}
 ===== 実行結果

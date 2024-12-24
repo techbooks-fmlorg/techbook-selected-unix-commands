@@ -6,7 +6,7 @@ CPUの情報を表示できる
 ===== 実行例
 
 //list[][][fontsize=xx-small]{
-$lscpu
+$ lscpu
 //}
 ===== 実行結果
 
