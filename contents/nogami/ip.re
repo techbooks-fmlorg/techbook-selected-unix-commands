@@ -2,7 +2,7 @@
 
 == ip
 ネットワークデバイスやルーティング、ポリシーなどの表示と変更ができる。
-動作にはオブジェクトが必須。
+動作にはサブコマンドが必須。
 ===== 実行例
 
 //list[][][fontsize=xx-small]{
@@ -24,7 +24,7 @@ where  OBJECT := { link | address | addrlabel | route | rule | neighbor | ntable
                     -o[neline] | -t[imestamp] | -ts[hort] | -b[atch] [filename] |
                     -rc[vbuf] [size] | -n[etns] name | -a[ll] | -c[olor]}
 //}
-ipコマンドで利用可能なオブジェクト・オプションについて示されている。
+ipコマンドで利用可能なサブコマンド・オプションについて示されている。
 === サブコマンド
 ネットワークインターフェース(データを送受信するための接続ポイント)に関連するIPアドレス情報を確認できる。
 ==== address a
