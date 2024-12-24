@@ -7,12 +7,12 @@
 ===== 実行例1
 
 //list[][][fontsize=xx-small]{
-$ls
+$ ls
 www.py htdocs/ 
 ※ www.pyというファイルとhtdocsというディレクトリがある。
 mkdir ディレクトリ名
 ※ 今回はディレクトリ名としてtestと入力する
-$mkdir test
+$ mkdir test
 
 $mkdir test/dir
 //}

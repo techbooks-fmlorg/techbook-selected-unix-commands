@@ -14,7 +14,7 @@ admin(IPアドレス)$exit
 ===== 実行結果1
 
 //list[][][fontsize=xx-small]{
- exit
+ $ exit
 Script done.
 Connection to IPアドレス closed.
 user_name:~$   
@@ -25,7 +25,7 @@ user_name:~$
 
 //list[][][fontsize=xx-small]{
 ※実行例1の続き
-user_name$exit
+user_name$ exit
 //}
 ===== 実行結果2
 
