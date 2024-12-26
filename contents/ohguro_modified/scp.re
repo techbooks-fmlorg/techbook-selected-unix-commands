@@ -12,8 +12,12 @@ scpは、「Secure Copy」の略。
 sampleファイルを、exampleサーバのhome/test
 
 //list[][][fontsize=xx-small]{
-  $ scp sample.txt testuser@example:/home/test/
+  scp [コピー元のファイルパス] [コピー先のファイルパス]
 //}
+
+//list[][][fontsize=xx-small]{
+  $ scp sample.txt testuser@example:/home/test/
+    // 「sample.txt」がコピー元のファイル名、「testuser@example:/home/test/」がコピー先のファイルパス
 
 
 
