@@ -12,7 +12,7 @@ pwdは、「Print Working Directory」もしくは「Present Working Directory�
 
 
 //list[][][fontsize=xx-small]{
-  pwd
+  $ pwd
 //}
 
 

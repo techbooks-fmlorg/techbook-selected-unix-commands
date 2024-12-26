@@ -6,13 +6,13 @@
 
 ===== 実行例 
 
-test1.txtとtest2.txtが格納されたexample.zipを解凍。
-
 //list[][][fontsize=xx-small]{
-  unzip example.zip
+  $ unzip example.zip
 //}
 
 ===== 実行結果
+
+test1.txtとtest2.txtが格納されたexample.zipを解凍。
 
 //list[][][fontsize=xx-small]{
  Archive:  example.zip

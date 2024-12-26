@@ -12,7 +12,7 @@ scpは、「Secure Copy」の略。
 sampleファイルを、exampleサーバのhome/test
 
 //list[][][fontsize=xx-small]{
-  scp sample.txt testuser@example:/home/test/
+  $ scp sample.txt testuser@example:/home/test/
 //}
 
 
