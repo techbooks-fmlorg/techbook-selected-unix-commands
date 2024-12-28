@@ -40,16 +40,16 @@ AWSのサービスの一つである、S3(ストレージサービス、デー�
 ファイルの受信 $ aws s3 cp S3 URI/ファイル名 (ファイルを入れたいディレクトリ名/)受信したときのファイル名
 ※データの受信の際にディレクトリを指定しなかった場合は、現在開いているディレクトリに保存される。
 
-admin@16.32.64.128$ aws s3 ls s3://b2902900 //s3(b2902900)内のパケットを確認
-test.txt
+admin@16.32.64.128$ aws s3 ls s3://b2902900  #s3(b2902900)内のパケットを確認
+test.py
 
-admin@16.32.64.128$ ls //現在開いているディレクトリ内のファイルを確認している
-test2.txt htdocs
-test2とhtdocsという名前のディレクトリがある
+admin@16.32.64.128$ ls  #現在開いているディレクトリ内のファイルを確認している
+www.py   htdocs
+www.pyというファイルととhtdocsという名前のディレクトリがある
 
-admin@16.32.64.128$ aws s3 cp test2.txt s3://b2902900
+admin@16.32.64.128$ aws s3 cp www.py s3://b2902900
 
-admin@16.32.64.128$ aws s3 cp s3://b2902900 test.txt
+admin@16.32.64.128$ aws s3 cp s3://b2902900/hello.py hello.py
 
 admin@16.32.64.128$ aws s3 ls s3://b2902900
 
@@ -60,12 +60,12 @@ $ ls
 
 //list[][][fontsize=xx-small]{
 admin@16.32.64.128$ aws s3 ls s3://b2902900
-test.txt    test2.txt
+hello.py   www.py
 
 admin@16.32.64.128$ ls
-test.txt    test2.txt
+hello.py   www.py   htdocs
 //}
-この結果からs3のパケットにはtest2.txtがローカルから送信されて、ローカルにはtest.txtがパケットから受信したのがわかる。
+この結果からs3のパケットにはwww.pyがEC2から送信されて、EC2にはtest.pyがパケットから受信したのがわかる。
 
 ===== 実行例(s3 sync)
 
@@ -74,16 +74,17 @@ test.txt    test2.txt
 データの送信 $ aws s3 sync ディレクトリ名 S3 URI
 
 データの受信 $ aws s3 sync S3 URI ディレクトリ名
-admin@16.32.64.128$ cd htdocs //htdocsディレクトリに移動
+admin@16.32.64.128$ cd htdocs  #htdocsディレクトリに移動
 
-admin@16.32.64.128$ ls 
-hello.py w3.py
-admin@16.32.64.128$ aws s3 ls s3://b2902900 //s3(b2902900)内のパケットを確認
-test.txt test2.txt
+admin@16.32.64.128$ ls  #htdocs内のファイルを確認
+index.html   index2.html
 
-admin@16.32.64.128$ aws s3 sync ./ s3://b2902900　// ./はカレントディレクトリ(今開いてるディレクトリ)を表している。
+admin@16.32.64.128$ aws s3 ls s3://b2902900  #s3(b2902900)内のパケットを確認
+hello.py   www.py
 
-admin@16.32.64.128$ aws s3 ls s3://b2902900 //s3(b2902900)内のパケットを確認
+admin@16.32.64.128$ aws s3 sync ./ s3://b2902900　 # ./はカレントディレクトリ(今開いてるディレクトリ)を表している。
+
+admin@16.32.64.128$ aws s3 ls s3://b2902900  #s3(b2902900)内のパケットを確認
 
 admin@16.32.64.128$ aws s3 sync s3://b2902900 ./
 
@@ -94,10 +95,10 @@ admin@16.32.64.128$ ls
 
 //list[][][fontsize=xx-small]{
 admin@16.32.64.128$ aws s3 ls s3://b2902900
-hello.py test.txt test2.txt w3.py
+hello.py   index.html   index2.html   www.py
 
 admin@16.32.64.128$ ls
-hello.py test.txt test2.txt w3.py
+hello.py   index.html   index2.html   www.py
 //}
-syncコマンドでs3://b2902900にhello.pyとw3.pyがアップロードされ、s3://b2902900内に4つのファイルが入り、
+syncコマンドでs3://b2902900にindex.htmlとindex.htmlがアップロードされ、s3://b2902900内に4つのファイルが入り、
 その後syncコマンドでb2902900から計4つのファイルを受信している。
