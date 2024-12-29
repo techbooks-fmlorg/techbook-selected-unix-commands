@@ -118,12 +118,14 @@ text.txtの権限を所有者(admin205)が読み書き可能に、
 ===== 実行例 
 
 //list[][][fontsize=xx-small]{
-  $ chmod -v 614 text.txt
+$ chmod -v 614 text.txt
 //}
 
 ===== 実行結果 
 
 //list[][][fontsize=xx-small]{
+  $ chmod -v 614 text.txt
+  
   'test.txt' モードを 0644 (rw-r--r--) から 0614 (rw---xr--)　へ変更しました
 //}
-※-vなかった場合はとくに表示されない
+-vがない場合は何も表示されない

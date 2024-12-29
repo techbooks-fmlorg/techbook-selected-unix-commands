@@ -7,17 +7,17 @@ sshやsudoコマンドでログインしたときにログアウトできる。
 
 ===== 実行例1
 
+前提としてsshコマンドでEC2(AWSのサービスの一つ)にログインしている
 //list[][][fontsize=xx-small]{
-※sshコマンドでログインしている
-admin(IPアドレス)$exit
+admin@16.32.64.128$exit
 //}
 ===== 実行結果1
 
 //list[][][fontsize=xx-small]{
- $ exit
+ admin@16.32.64.128$ exit
 Script done.
-Connection to IPアドレス closed.
-user_name:~$   
+Connection to 16.32.64.128 closed.
+user:~$   
 ※ssh先からログアウトしてログイン以前のターミナルに戻った
 //}
 
@@ -25,7 +25,7 @@ user_name:~$
 
 //list[][][fontsize=xx-small]{
 ※実行例1の続き
-user_name$ exit
+user$ exit
 //}
 ===== 実行結果2
 

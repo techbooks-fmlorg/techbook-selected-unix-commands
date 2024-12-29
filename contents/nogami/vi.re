@@ -8,7 +8,7 @@ viは、キーボードのみでの編集を前提にしたコマンドライン
 
 ===== 実行例
 //list[][][fontsize=xx-small]{
-vi ファイル名
+$ vi ファイル名
 //}
 ===== 実行結果
 //list[][][fontsize=xx-small]{

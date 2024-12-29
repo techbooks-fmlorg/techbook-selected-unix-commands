@@ -8,12 +8,12 @@
 //list[][][fontsize=xx-small]{
 ssh ユーザーネーム@ipアドレス
 
-$ ssh user@100.100.100.100
+$ ssh user@16.32.64.128
 //}
 ===== 実行結果
 
 //list[][][fontsize=xx-small]{
-user@100.100.100.100$
+user@16.32.64.128$
 //}
 $の前にユーザーネーム@ipアドレスが表示される。
 === オプション一覧
@@ -23,10 +23,10 @@ $の前にユーザーネーム@ipアドレスが表示される。
 ===== 実行例
 
 //list[][][fontsize=xx-small]{
-$ ssh -i .ssh/id_rsa.pem user@100.100.100.100
+$ ssh -i .ssh/id_rsa.pem user@16.32.64.128
 //}
 ===== 実行結果
 
 //list[][][fontsize=xx-small]{
-user@100.100.100.100$
+user@16.32.64.128$
 //}

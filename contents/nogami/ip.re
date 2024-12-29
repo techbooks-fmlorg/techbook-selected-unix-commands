@@ -6,7 +6,7 @@
 ===== 実行例
 
 //list[][][fontsize=xx-small]{
-$ip
+$ ip
 //}
 ===== 実行結果
 

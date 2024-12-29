@@ -32,7 +32,7 @@ MB単位で出力する。(1MB=1024KB)
 ===== 実行例
 
 //list[][][fontsize=xx-small]{
-$df -m 
+$　df -m 
 //}
 ===== 実行結果
 
