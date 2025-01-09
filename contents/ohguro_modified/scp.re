@@ -18,6 +18,8 @@ sampleファイルを、exampleサーバのhome/test
 //list[][][fontsize=xx-small]{
   $ scp sample.txt testuser@example:/home/test/
     // 「sample.txt」がコピー元のファイル名、「testuser@example:/home/test/」がコピー先のファイルパス
+    // testuserがコピー先のユーザ名、exampleがドメイン名（サーバ名）
+    // ipアドレスでの指定も可能
 
 
 
