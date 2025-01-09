@@ -38,7 +38,7 @@ $ tree
 ===== 実行結果
 
 //list[][][fontsize=xx-small]{
-$ cp test.txt test2.txt
+$ cp test.txt htdocs/test2.txt
 
 $ tree
 .
