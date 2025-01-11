@@ -27,7 +27,7 @@ $ nano ファイル名
 ショートカットについての説明が確認できる。また、ショートカットについて
 ^という文字があるが、これはwindowsならctrl、macならcommandを示している。
 
-//image[nano]
+//image[nano][nano画面下のヘルプメッセージ（ショートカットのチートシート）][pos=b]
 
 ==== ctrl OR command +x
 
