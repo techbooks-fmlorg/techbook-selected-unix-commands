@@ -4,7 +4,9 @@
 
 VERSION != cat etc/version
 
-all: book-ebook book-print do-clean
+all:    all-v2
+all-v2: do-book-v2-print
+all-v1: book-ebook book-print do-clean
 book-ebook: do-book-ebook
 book-print: do-book-print
 
@@ -26,6 +28,14 @@ do-book-print:
 	@ cp -pv etc/catalog.yml.print catalog.yml
 	@ docker run --rm -v `pwd -P`:/work -w /work kauplan/review2.5 rake pdf
 	@ mv -v selected-unix-commands.pdf release/selected-unix-commands.print.${VERSION}.pdf
+	@ make do-chown
+
+do-book-v2-print:
+	@ make init
+	@ cp -pv etc/catalog.yml.print.v2 catalog.yml
+	@ sh utils/v2-aggregate-files.sh
+	@ docker run --rm -v `pwd -P`:/work -w /work kauplan/review2.5 rake pdf
+	@ mv -v selected-unix-commands.pdf release/selected-unix-commands.${VERSION}.pdf
 	@ make do-chown
 
 do-chown:
