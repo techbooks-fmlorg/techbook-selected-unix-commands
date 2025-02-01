@@ -1,122 +1,131 @@
 #@# 
 
-== id
+=={id} id
 
- ユーザーIDやユーザー名、グループID、グループ名などの識別情報を出力する。自分の役割を確認するために利用する。
+ユーザーIDやユーザー名、グループID、グループ名などの識別情報を出力する。
+自分（自分のユーザ名）の役割や権限を確認するために利用する。
+
+
+==== 書式
+
+//list[][][fontsize=xx-small]{
+$ id
+
+$ id ユーザ名
+//}
+「ユーザ名」を指定しない場合は、このコマンドを実行している「ユーザ名」の情報が表示される。
+たとえば、AWSのDebianイメージであれば、通常あなたの使うユーザはadminである。
+よって
+//list[][][fontsize=xx-small]{
+$ id
+//}
+も
+//list[][][fontsize=xx-small]{
+$ id admin
+//}
+も同じようにユーザadminの情報を表示する
+
+
+=== 実行例
+
+==== 実行例 
+
+//list[][][fontsize=xx-small]{
+$ id admin
+//}
 
 
 
-===== 実行例 
+==== 実行結果 （ユーザ名がadminのユーザ情報を出力する場合）
+
+//list[][][fontsize=xx-small]{
+$ id admin
+uid=1000(admin) gid=1000(admin) groups=1000(admin),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev)
+//}
+ユーザ名adminのユーザIDや所属グループがわかる
+
+ * uid=1000(admin):				ユーザ名がadmin、ユーザIDが1000
+ * gid=1000(admin):				グループ名がadmin、グループIDが1000
+ * groups=1000(admin),4(adm),20(dialout):	admin,adm,dialoutグループに所属
+
+
+
+
+==== 実行結果 （自分のユーザ情報を出力する場合）
 
 
 
 //list[][][fontsize=xx-small]{
-  id ユーザ名
+$ id
+uid=1000(admin) gid=1000(admin) groups=1000(admin),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev)
+//}
+出力の読み方：
+
+ * 自分のユーザ名やユーザID、所属グループがわかる
+ * 現在のユーザがadminの場合 $ id admin と同じ出力である
+
+
+
+
+==== 実行結果 （ユーザ名がrootのユーザ情報を出力する場合）
+
+
+
+//list[][][fontsize=xx-small]{
+$ id root
+uid=0(root) gid=0(root) groups=0(root)
+//}
+
+
+
+
+==== 実行結果 （管理者権限(sudo)を利用し、自分のユーザ情報を出力する場合）
+
+
+
+//list[][][fontsize=xx-small]{
+$ sudo id
+uid=0(root) gid=0(root) groups=0(root)
+//}
+出力の読み方：
+@<code>{sudo id}
+は
+@<B>{id}コマンドを管理者権限で実行することになるので、
+@<code>{id root}
+を実行したときと同じ出力になる
+
+
+
+
+=== 知っていると便利なオプション:  -u
+
+ユーザIDのみを出力する。
+
+
+
+==== 実行例 
+
+
+
+//list[][][fontsize=xx-small]{
+$ id -u ユーザ名
 //}
 
 
 
 
 
-===== 実行結果　（ユーザ名がadminのユーザ情報を出力する場合）
+==== 実行結果 （ユーザ名がadminのユーザIDを出力する場合）
 
 
 
 //list[][][fontsize=xx-small]{
-	$ id admin
-	uid=1000(admin) gid=1000(admin) groups=1000(admin),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev)
-	
-	------------------------------------------------------------------------
-	※出力の読み方
-	uid=1000(admin):ユーザ名がadmin、ユーザIDが1000
-	gid=1000(admin):グループ名がadmin、グループIDが1000
-	groups=1000(admin),4(adm),20(dialout):admin,adm,dialoutグループに所属
-	ユーザ名がadminのユーザIDや所属グループがわかる
+$ id -u admin
+1000
 //}
+ユーザ名adminのユーザIDが1000であることが分かる
 
+#@# X-TODO: TIPS shell script or dockerfile (id -u)
+このオプションをターミナル上で利用することは少ないが、
+シェルスクリプトやDockerfileを書く際には必要な知識である
 
-
-
-===== 実行結果　（自分のユーザ情報を出力する場合）
-
-
-
-//list[][][fontsize=xx-small]{
-	$ id
-	uid=1000(admin) gid=1000(admin) groups=1000(admin),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev)
-
-	------------------------------------------------------------------------
-	※出力の読み方
-	自分のユーザ名やユーザID、所属グループがわかる
-	現在のユーザがadminの場合 $ id admin と同じ出力である
-//}
-
-
-
-
-===== 実行結果　（ユーザ名がrootのユーザ情報を出力する場合）
-
-
-
-//list[][][fontsize=xx-small]{
-	$ id root
-	uid=0(root) gid=0(root) groups=0(root)
-//}
-
-
-
-
-===== 実行結果　（管理者権限(sudo)を利用し、自分のユーザ情報を出力する場合）
-
-
-
-//list[][][fontsize=xx-small]{
-	$ sudo id
-	uid=0(root) gid=0(root) groups=0(root)
-
-	------------------------------------------------------------------------
-	※出力の読み方
-	管理者権限で実行した場合、 $ id root と同じ出力である
-//}
-
-
-
-
-=== オプション一覧
-
-
-
-
-==== -u
-
-
-
-
-ユーザIDのみ出力する。
-
-
-
-===== 実行例 
-
-
-
-//list[][][fontsize=xx-small]{
-  id -u ユーザ名
-//}
-
-
-
-
-
-===== 実行結果　（ユーザ名がadminのユーザIDを出力する場合）
-
-
-
-//list[][][fontsize=xx-small]{
-	$ id -u admin
-	1000
-
-	------------------------------------------------------------------------
-	※出力の読み方
-	ユーザ名がadminのユーザIDがわかる
-//}

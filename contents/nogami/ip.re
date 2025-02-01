@@ -1,16 +1,62 @@
 #@# 
 
-== ip
-ネットワークデバイスやルーティング、ポリシーなどの表示と変更ができる。
-動作にはサブコマンドが必須。
-===== 実行例
+=={ip} ip
+
+ネットワークデバイスやルーティング、ポリシーなどの表示や変更ができる。
+
+#@# X-TODO: コラム化がのぞましい (ip object change ...)
+注意：
+ipコマンドによる変更も可能だが、
+これは障害対応の場合のみと考えておいたほうがよい。
+通常、ネットワークの設定は/etc以下の設定ファイルにもとづきOS起動時に行われる。
+ネットワーク関連の変更は/etc以下を適切に変更後、再起動してOSに設定してもらうべきである
+
+
+
+=== 書式
+
+//list[][][fontsize=xx-small]{
+$ ip [ OPTIONS ] OBJECT COMMAND
+$ ip [ OPTIONS ] OBJECT help
+//}
+
+OBJECT部分では、
+@<B>{address}（IPアドレス）や
+@<B>{route}（経路情報）など、
+ネットワークの構成要素を指定する。
+COMMAND部分には、そのOBJECTごとのコマンドが利用できる。
+もしコマンドが分からない場合は、OBJECTに関わらずhelpコマンドを指定すればヘルプメッセージが表示される
+
+コマンドを指定しない場合は、たいてい情報の表示が行われる。
+たとえば、
+@<code>{ip address}
+は
+@<code>{ip address show}
+と同じ意味に解釈され、
+現在のIPアドレス情報が表示される
+
+オブジェクト指向言語っぽい書き方をすれば、次のようになるだろう。
+Unixはスペース区切りなので、これを上のように表記すると考えてほしい
+//list[][][fontsize=xx-small]{
+ip->OBJECT->COMMAND();
+
+例：IPアドレスを表示せよ
+ip->address->show();
+//}
+
+
+=== 実行例
+
+==== 実行例
 
 //list[][][fontsize=xx-small]{
 $ ip
 //}
-===== 実行結果
+
+==== 実行結果
 
 //list[][][fontsize=xx-small]{
+$ ip
 Usage: ip [ OPTIONS ] OBJECT { COMMAND | help }
        ip [ -force ] -batch filename
 where  OBJECT := { link | address | addrlabel | route | rule | neighbor | ntable |
@@ -25,16 +71,26 @@ where  OBJECT := { link | address | addrlabel | route | rule | neighbor | ntable
                     -rc[vbuf] [size] | -n[etns] name | -a[ll] | -c[olor]}
 //}
 ipコマンドで利用可能なサブコマンド・オプションについて示されている。
-=== サブコマンド
+
+@<B>{わからないときは、あえてエラーを起こすようなコマンドを実行し、ヘルプメッセージを表示させる技}である。
+@<B>{ほぼ、どんなときでも有用}なので覚えておくと良い
+（注：OSを停止させるコマンド群では、ヘルプメッセージなど出さずにPCが落ちてしまうので気をつけること）
+
+
+=== コマンド
+
 ネットワークインターフェース(データを送受信するための接続ポイント)に関連するIPアドレス情報を確認できる。
-==== address a
+
+==== address （省略してaも可）オブジェクト
+
 ===== 実行例
 
 //list[][][fontsize=xx-small]{
 $ ip address
 $ ip a  
-※どちらも同じ結果が出力される。
 //}
+どちらも同じ結果が出力される。
+
 ===== 実行結果
 
 //list[][][fontsize=xx-small]{
@@ -55,21 +111,25 @@ qlen 1
     inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
        valid_lft forever preferred_lft forever
 //}
-qlen:キューの長さ(2つ目がens5,3つ目にdocker0という名称がついている。)
-inet:ipv4アドレス/サブネットマスクが記載されている。
-inet6:ipv6アドレスが記載されている。
-mtu:1回に送信できるデータパケットの最大サイズ
-link/ether:MACアドレス(各ネットワークインターフェースに割り当てられた一意の物理アドレス)が書かれている。
 
-==== route r
+ * qlen:	キューの長さ(2つ目がens5,3つ目にdocker0という名称がついている。)
+ * inet:	ipv4アドレス/サブネットマスクが記載されている。
+ * inet6:	ipv6アドレスが記載されている。
+ * mtu:		1回に送信できるデータパケットの最大サイズ
+ * link/ether:	MACアドレス(各ネットワークインターフェースに割り当てられた一意の物理アドレス)が書かれている。
+
+==== route （省略してrも可）オブジェクト
+
 ルーティング(ネットワークの経路情報)を出力する。
+
 ===== 実行例
 
 //list[][][fontsize=xx-small]{
 $ ip route
 $ ip r
-※どちらも同じ結果が出力される。
 //}
+どちらも同じ結果が出力される。
+
 ===== 実行結果
 
 //list[][][fontsize=xx-small]{
@@ -81,9 +141,10 @@ default via 210.128.53.201 dev enp3s8 onlink
 210.128.53.232/29 via 210.128.53.212 dev enp1s0 
 210.128.53.248/29 dev enp2s0 proto kernel scope link src 210.128.53.249
 //}
-default:デフォルトゲートウェイ(宛先がルーティングテーブルに存在しない場合に転送するルーター)
-via ipアドレス:次に情報を渡されるルーターのipアドレスを示している。
-dev enp:送信元のネットワークデバイス名
-proto kernel:ルートを作成したルーティングプロトコル
-scope link:送信先の範囲、linkなら自分のグループのネットワークであることを示している。
-src ipアドレス:送信元のネットワークデバイスのipアドレス
+
+ * default:		デフォルトゲートウェイ(宛先がルーティングテーブルに存在しない場合に転送するルーター)
+ * via ipアドレス:	次に情報を渡されるルーターのipアドレスを示している。
+ * dev enp:		送信元のネットワークデバイス名
+ * proto kernel:	ルートを作成したルーティングプロトコル
+ * scope link:		送信先の範囲、linkなら自分のグループのネットワークであることを示している。
+ * src ipアドレス:	送信元のネットワークデバイスのipアドレス
