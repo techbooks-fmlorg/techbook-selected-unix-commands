@@ -133,7 +133,7 @@ stylesheet: ["style.css"]
 # htmlversion: 4
 
 # 目次として抽出する見出しレベル
-toclevel: 3               # （部と）章と節と項（小節）を目次に載せる
+toclevel: 2               # （部と）章と節と項（小節）を目次に載せる
 
 # 採番の設定。採番させたくない見出しには「==[nonum]」のようにnonum指定をする
 #
