@@ -1,35 +1,58 @@
 #@# 
 
-== exit
+=={exit} exit
 
 sshやsudoコマンドでログインしたときにログアウトできる。
-ターミナルの画面にいる場合はターミナルが閉じる。
+Windowsなどで、
+ターミナルアプリの画面でexitコマンドを実行した場合は、そのターミナルアプリごと閉じてしまうことに注意
 
-===== 実行例1
 
-前提としてsshコマンドでEC2(AWSのサービスの一つ)にログインしている
+=== 書式
+
 //list[][][fontsize=xx-small]{
-admin@16.32.64.128$exit
+$ exit
 //}
-===== 実行結果1
+
+
+=== 実行例
+
+以下、Windows上のターミナルアプリ上でsshコマンドを実行し、
+EC2(AWSのサービスの一つ)上に作成したDebianのサーバにSSHログインしている前提とする
+
+#@# X-TODO: Windowsのターミナル画面の図が欲しいところ
+//list[][][fontsize=xx-small]{
+Windowsのターミナルアプリ ---(SSH)---> Debian GNU/Linxu (EC2)
+//}
+
+
+==== 実行例1 （EC2からログアウトする）
 
 //list[][][fontsize=xx-small]{
- admin@16.32.64.128$ exit
+admin@16.32.64.128$ exit
+//}
+Debian上で@<B>{exit}コマンドを実行する
+
+==== 実行結果1
+
+//list[][][fontsize=xx-small]{
+admin@16.32.64.128$ exit
 Script done.
 Connection to 16.32.64.128 closed.
 user:~$   
-※ssh先からログアウトしてログイン以前のターミナルに戻った
 //}
+ssh先からログアウトして、Windowsのターミナルに戻る
 
-===== 実行例2
+
+#@# X-TODO: これはWindowsのターミナル画面の図を貼るべきなのでは？
+==== 実行例2 （Windowsのターミナルアプリからログアウトする）
 
 //list[][][fontsize=xx-small]{
-※実行例1の続き
 user$ exit
 //}
-===== 実行結果2
+（実行例1の続きで）いまWindowsのターミナルに戻っている。
+その上で、もういちどexitを実行すると
 
-//list[][][fontsize=xx-small]{
- exit
-※ターミナルの画面が閉じる
-//}
+
+==== 実行結果2
+
+ターミナルアプリの画面ごと閉じてしまう

@@ -1,18 +1,39 @@
 #@# 
 
-== aws
+=={aws} aws
 
-AWS(Amazon Web Serviceの略。Amazonが提供するクラウドコンピューティングサービス)のサービスを利用することができる。
-動作にはコマンド(AWSのサービス)が必須。
+awsコマンドを使うと、
+コマンドラインからAWSサービスを利用することができる。
 
-===== 実行例
+AWS固有のコマンドなので、当然Unix標準ではない。
+EC2のOSイメージではawsコマンドが標準搭載されていることが多いようだが、
+OSによっては別途インストールが必要である
+
+=== 書式
+
+//list[][][fontsize=xx-small]{
+$ aws [options] command subcommand [parameters]
+//}
+command部分とsubcommand部分の指定は必須である。
+[options]と[parameters]はオプション
+
+おおむねcommand部分にはサービス名（例：ec2、s3）を指定する。
+subcommand部分では、そのcommandサービス固有の動作指定を行う
+
+
+=== 実行例 ＜引数がないためエラー＞
 
 //list[][][fontsize=xx-small]{
 $ aws
 //}
-===== 実行結果
+
+TIPS:
+わざとエラーメッセージを表示して、コマンドの使い方を思い出そうとするベテランの技:-)
+
+=== 実行結果
 
 //list[][][fontsize=xx-small]{
+$ aws
 To see help text, you can run:
 
   aws help
@@ -23,41 +44,72 @@ aws: error: the following arguments are required: command
 //}
 aws単体だとエラーが表示される
 
+
+=== aws s3 subcommand
+
 awsで使えるコマンドは様々であるが、今回はサービスの一つであるS3のみを紹介する。
-==== s3
-AWSのサービスの一つである、S3(ストレージサービス、データの長期保存、URLを発行し静的なWebサイト(事前にHTMLを作成しその通りに動くサイト)を公開することなどができる)を利用できる。
-パケット(S3のデータを保管しているもの)内部を確認する際はlsを利用する。データを送受信する際は、cp,sync(cpはファイル・syncはディレクトリの中身を基本的に送受信する)を利用する。
 
-===== 実行例(s3 cp)
+@<B>{S3（Simple Storage Service）}はAWSを代表するサービスの一つである。
+きわめて耐久性が高く、
+@<B>{99.999999999％（イレブン・ナイン）を超えるデータ耐久性}を唱うサービス
 
-※前提としてawsのec2にログインしている状態である。
+S3の代表的な使い方は
+「ストレージサービス（データの長期保存）」と
+「静的Webサイト(事前にHTMLを作成し、その通りに動くサイト)の公開」である
+
+S3を利用する際には、まずバケットと呼ばれるファイルの入れ物を作成する。
+これはUnixのディレクトリやWindowsのフォルダに相当するものと考えて良い。
+ユーザは、このバケットにファイルをアップロードしていくことになる
+
+awsコマンドでS3サービスを呼び出す場合、command部分にはs3を指定する。
+subcommandで様々なファイル操作が行える。
+たとえば、
+バケットの内部を確認する際はsubcommnadにlsを、
+データを送受信する際には、
+cpもしくはsync(cpはファイル、syncはバケットとフォルダを同期)をsubcommnadに指定する。
+
+=== 実行例 ＜S3とのファイルのやりとり＞
+
+@<B>{注意：前提としてawsのec2にログインしている状態である。}
+
+バケットの中身を確認する
 //list[][][fontsize=xx-small]{
-パケットの確認 $ aws s3 ls S3 URI(S3のURLのようなもの)
-※S3 URIはS3://設定した名前 という形式である。
+$ aws s3 ls S3-URI(S3のURLのようなもの)
+//}
+S3-URIは「S3://設定した名前」という形式である。
 
-ファイルの送信 $ aws s3 cp ファイル名 S3 URI
+//list[][][fontsize=xx-small]{
+ファイルの送信 $ aws s3 cp ファイル名 S3-URI
 
-ファイルの受信 $ aws s3 cp S3 URI/ファイル名 (ファイルを入れたいディレクトリ名/)受信したときのファイル名
-※データの受信の際にディレクトリを指定しなかった場合は、現在開いているディレクトリに保存される。
+ファイルの受信 $ aws s3 cp S3-URI/ファイル名 (ファイルを入れたいディレクトリ名/)受信したときのファイル名
+//}
+データの受信の際にディレクトリを指定しなかった場合は、現在開いているディレクトリに保存される。
 
-admin@16.32.64.128$ aws s3 ls s3://b2902900  #s3(b2902900)内のパケットを確認
+//list[][][fontsize=xx-small]{
+admin@16.32.64.128$ aws s3 ls s3://b2902900  #s3(b2902900)内のバケットを確認
 hello.py
 
 admin@16.32.64.128$ ls  #現在開いているディレクトリ内のファイルを確認している
 www.py   htdocs
 www.pyというファイルととhtdocsという名前のディレクトリがある
+//}
 
+//list[][][fontsize=xx-small]{
 admin@16.32.64.128$ aws s3 cp www.py s3://b2902900
 # ec2内のwww.pyをs3(b2902900)にコピーしている
 admin@16.32.64.128$ aws s3 cp s3://b2902900/hello.py hello.py
-# s3(b2902900)内のパケットにあるhello.pyをec2内にhello.pyという名前でコピーしている
+# s3(b2902900)内のバケットにあるhello.pyをec2内にhello.pyという名前でコピーしている
+//}
 
+//list[][][fontsize=xx-small]{
 admin@16.32.64.128$ aws s3 ls s3://b2902900
 
 $ ls
 
 //}
-===== 実行結果(s3 cp)
+
+
+=== 実行結果(s3 cp)
 
 //list[][][fontsize=xx-small]{
 admin@16.32.64.128$ aws s3 ls s3://b2902900
@@ -66,35 +118,35 @@ hello.py   www.py
 admin@16.32.64.128$ ls
 hello.py   www.py   htdocs
 //}
-この結果からs3のパケットにはwww.pyがEC2から送信されて、EC2にはhello.pyがs3パケットからec2に受信したのがわかる。
+この結果からs3のバケットにはwww.pyがEC2から送信されて、EC2にはhello.pyがs3バケットからec2に受信したのがわかる。
 
-===== 実行例(s3 sync)
+=== 実行例(s3 sync)
 
 ※前提としてawsのec2にログインしている状態である。
 //list[][][fontsize=xx-small]{
-データの送信 $ aws s3 sync ディレクトリ名 S3 URI
+データの送信 $ aws s3 sync ディレクトリ名 S3-URI
 
-データの受信 $ aws s3 sync S3 URI ディレクトリ名
+データの受信 $ aws s3 sync S3-URI ディレクトリ名
 admin@16.32.64.128$ cd htdocs  #htdocsディレクトリに移動
 
 admin@16.32.64.128$ ls  #htdocs内のファイルを確認
 index.html   index2.html
 
-admin@16.32.64.128$ aws s3 ls s3://b2902900  #s3(b2902900)内のパケットを確認
+admin@16.32.64.128$ aws s3 ls s3://b2902900  #s3(b2902900)内のバケットを確認
 hello.py   www.py
 
 admin@16.32.64.128$ aws s3 sync ./ s3://b2902900　 # ./はカレントディレクトリ(今開いてるディレクトリ)を表している。
-#ec2のカレントディレクトリ(htdocs)をs3(b2902900)内のパケットに送信している
+#ec2のカレントディレクトリ(htdocs)をs3(b2902900)内のバケットに送信している
 
-admin@16.32.64.128$ aws s3 ls s3://b2902900  #s3(b2902900)内のパケットを確認
+admin@16.32.64.128$ aws s3 ls s3://b2902900  #s3(b2902900)内のバケットを確認
 
 admin@16.32.64.128$ aws s3 sync s3://b2902900 ./
-#s3(b2902900)内のパケットをec2のカレントディレクトリ(htdocs)に送信している
+#s3(b2902900)内のバケットをec2のカレントディレクトリ(htdocs)に送信している
 
 admin@16.32.64.128$ ls
 
 //}
-===== 実行結果(s3 sync)
+=== 実行結果(s3 sync)
 
 //list[][][fontsize=xx-small]{
 admin@16.32.64.128$ aws s3 ls s3://b2902900

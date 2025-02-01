@@ -1,13 +1,24 @@
 #@# 
 
-== df
+=={df} df
+
 Unixのストレージ利用状況を確認できる。
-===== 実行例
+
+=== 書式
 
 //list[][][fontsize=xx-small]{
 $ df 
 //}
-===== 実行結果
+
+=== 実行例
+
+==== 実行例
+
+//list[][][fontsize=xx-small]{
+$ df 
+//}
+
+==== 実行結果
 
 //list[][][fontsize=xx-small]{
 Filesystem     1K-blocks    Used Available Use% Mounted on
@@ -19,21 +30,27 @@ tmpfs               5120       0      5120   0% /run/lock
 /dev/xvda15       126678   11840    114838  10% /boot/efi
 tmpfs              99332       0     99332   0% /run/user/1000
 //}
-Filesystem:各ファイルシステム
-1K-blocks:使用できるディスク容量、基本単位はKBである(udevは485284KBである)
-Used:使用しているディスク容量
-Available:ディスクの空き容量
-Use%:ディスクの使用率
-Mounted on:どのフォルダでファイルシステムが使えるか示してる。(udevは/devというフォルダが使える。)
 
-=== オプション一覧
+読み方は次のとおり
+
+ * Filesystem:	各ファイルシステム
+ * 1K-blocks:	使用できるディスク容量、基本単位はKBである(udevは485284KBである)
+ * Used:	使用しているディスク容量
+ * Available:	ディスクの空き容量
+ * Use%:	ディスクの使用率
+ * Mounted on:	どのフォルダでファイルシステムが使えるかを示している(udevは/devというフォルダが使える)。
+
+=== 知っていると便利なオプション
+
 ==== -m
 MB単位で出力する。(1MB=1024KB)
+
 ===== 実行例
 
 //list[][][fontsize=xx-small]{
 $　df -m 
 //}
+
 ===== 実行結果
 
 //list[][][fontsize=xx-small]{
