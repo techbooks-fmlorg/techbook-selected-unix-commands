@@ -8,3 +8,6 @@ tmp/*
 selected-unix-commands-pdf/*
 selected-unix-commands-md/*
 techbook-utils
+config.yml
+catalog.yml
+config-starter.yml
