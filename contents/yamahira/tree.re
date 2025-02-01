@@ -1,146 +1,119 @@
 #@# 
 
-== tree
+=={tree} tree
 
- ファイルとディレクトリを樹木状に表示する。ファイルやディレクトリの整理状況を把握するために利用する。
-
-
-
-===== 実行例 
+ファイルとディレクトリを樹木状に表示する。ファイルやディレクトリの整理状況を把握するために利用する。
 
 
+=== 書式
 
 //list[][][fontsize=xx-small]{
-  tree ディレクトリ
+$ tree [options] [ディレクトリ]
+//}
+
+
+=== 実行例
+
+==== 実行例 （adminディレクトリを出力する場合）
+
+//list[][][fontsize=xx-small]{
+$ tree admin
+//}
+
+
+==== 実行結果 （adminディレクトリを出力する場合）
+
+//list[][][fontsize=xx-small]{
+$ tree admin
+admin
+├── __pycache__
+│   └── bws.cpython-311.pyc
+├── bws.py
+├── cc-04.py
+├── htdocs
+│   ├── cart.html
+│   ├── index.html
+│   ├── lsform.html
+│   ├── rek_janken.html
+│   └── upload.html
+├── rekognition.py
+└── www.py
+
+3 directories, 10 files
 //}
 
 
 
+=== 知っていると便利なオプション
 
-
-===== 実行結果　（adminディレクトリを出力する場合）
-
-
-
-//list[][][fontsize=xx-small]{
-	$ tree admin
-	admin
-	├── __pycache__
-	│   └── bws.cpython-311.pyc
-	├── bws.py
-	├── cc-04.py
-	├── htdocs
-	│   ├── cart.html
-	│   ├── index.html
-	│   ├── lsform.html
-	│   ├── rek_janken.html
-	│   └── upload.html
-	├── rekognition.py
-	└── www.py
-
-	3 directories, 10 files
-//}
-
-
-
-=== オプション一覧
-
-
-
-
-==== -d
-
-
-
+=== -d オプション
 
 ディレクトリのみを樹木状に出力する。
 
 
-
-===== 実行例 
-
-
+==== 実行例 
 
 //list[][][fontsize=xx-small]{
-  tree -d ディレクトリ
+$ tree -d ディレクトリ
 //}
 
 
-
-
-
-===== 実行結果　（adminディレクトリ内のディレクトリのみを出力する場合）
-
-
+==== 実行結果 （adminディレクトリ内のディレクトリのみを出力する場合）
 
 //list[][][fontsize=xx-small]{
-	$ tree -d admin
-	admin
-	├── __pycache__
-	└── htdocs
+$ tree -d admin
+admin
+├── __pycache__
+└── htdocs
 
-	3 directories
+3 directories
 //}
 
 
-
-
-==== -a
-
-
-
+=== -a オプション
 
 隠しファイルを含むすべてのディレクトリとファイルを出力する。
 
 
 
-===== 実行例 
-
-
+==== 実行例 
 
 //list[][][fontsize=xx-small]{
-  tree -a ディレクトリ
+$ tree -a ディレクトリ
 //}
 
 
-
-
-
-===== 実行結果　（adminファイル内のすべてのディレクトリとファイルを出力する場合）
-
-
+==== 実行結果 （adminファイル内のすべてのディレクトリとファイルを出力する場合）
 
 //list[][][fontsize=xx-small]{
-	$ tree -a admin
-	admin
-	├── .bash_history
-	├── .bash_logout
-	├── .bashrc
-	├── .local
-	│   └── share
-	│       └── nano
-	├── .profile
-	├── .ssh
-	│   └── authorized_keys
-	├── .sudo_as_admin_successful
-	├── .viminfo
-	├── __pycache__
-	│   └── bws.cpython-311.pyc
-	├── bws.py
-	├── cc-04.py
-	├── htdocs
-	│   ├── cart.html
-	│   ├── index.html
-	│   ├── lsform.html
-	│   ├── rek_janken.html
-	│   └── upload.html
-	├── rekognition.py
-	└── www.py
+$ tree -a admin
+admin
+├── .bash_history
+├── .bash_logout
+├── .bashrc
+├── .local
+│   └── share
+│       └── nano
+├── .profile
+├── .ssh
+│   └── authorized_keys
+├── .sudo_as_admin_successful
+├── .viminfo
+├── __pycache__
+│   └── bws.cpython-311.pyc
+├── bws.py
+├── cc-04.py
+├── htdocs
+│   ├── cart.html
+│   ├── index.html
+│   ├── lsform.html
+│   ├── rek_janken.html
+│   └── upload.html
+├── rekognition.py
+└── www.py
 
-	7 directories, 17 files
-
-	------------------------------------------------------------------------
-	※出力の読み方
-	.sshなど.(ドット)から始まるファイルが隠しファイル
+7 directories, 17 files
 //}
+出力の読み方
 
+ * .sshなど.(ドット)から始まるファイルが隠しファイルも表示されていることがわかる
