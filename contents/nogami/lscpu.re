@@ -1,14 +1,26 @@
 #@# 
 
-== lscpu
+=={lscpu} lscpu
+
 CPUの情報を表示できる
 
-===== 実行例
+=== 書式
+
+//list[][][fontsize=xx-small]{
+$ lscpu [options]
+//}
+たいていは引数なしで実行すれば十分
+
+
+=== 実行例
+
+==== 実行例
 
 //list[][][fontsize=xx-small]{
 $ lscpu
 //}
-===== 実行結果
+
+==== 実行結果
 
 //list[][][fontsize=xx-small]{
 Architecture:             x86_64
@@ -64,9 +76,10 @@ Vulnerabilities:
   Srbds:                  Not affected
   Tsx async abort:        Not affected
 //}
-Architecture:CPUのアーキテクチャを示している。
-CPU op:CPUがサポートしてるモード(64bit,32bitアーキテクチャをサポートしている。)
-Address sizes:物理アドレスと仮想アドレスのサイズを示している。(物理アドレス46bit,仮想アドレス48bit)
-Byte Order:バイト順序(リトルエンディアンという最下位バイトが最初に来る形式である。)
-CPU(s):システムに搭載されてるCPUの数
-On-line CPU(s) list:現在使用可能なCPUのリスト(0という名称のCPU1つが使用可能)
+
+ * Architecture:	CPUのアーキテクチャを示している。
+ * CPU op:		CPUがサポートしてるモード(64bit,32bitアーキテクチャをサポートしている。)
+ * Address sizes:	物理アドレスと仮想アドレスのサイズを示している。(物理アドレス46bit,仮想アドレス48bit)
+ * Byte Order:		バイト順序(リトルエンディアンという最下位バイトが最初に来る形式である。)
+ * CPU(s):		システムに搭載されてるCPUの数
+ * On-line CPU(s) list:	現在使用可能なCPUのリスト(0という名称のCPU1つが使用可能)
