@@ -1,14 +1,24 @@
-#@# 
+#@# X-TODO pstree にある「親子関係」の説明が必要だろう、脚注？
 
-== pstree
+=={pstree} pstree
+
 プロセスの親子関係をツリー表示する。
 
-===== 実行例
+=== 書式
+
+//list[][][fontsize=xx-small]{
+$ pstree [options]
+//}
+
+=== 実行例
+
+==== 実行例
 
 //list[][][fontsize=xx-small]{
 $ pstree
 //}
-===== 実行結果
+
+==== 実行結果
 
 //list[][][fontsize=xx-small]{
 systemd─┬─2*[agetty]
@@ -26,4 +36,6 @@ systemd─┬─2*[agetty]
         ├─systemd-udevd
         └─unattended-upgr
 //}
-※bash(pstreeと入力したターミナル)がpstreeを呼び出していることがわかる
+
+ * @<code>{※}は実際には出力されない
+ * この行をみると、 bash(pstreeと入力したターミナル)がpstreeを呼び出していることがわかる
