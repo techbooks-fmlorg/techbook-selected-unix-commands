@@ -59,11 +59,7 @@ uid=1000(admin) gid=1000(admin) groups=1000(admin),4(adm),20(dialout),24(cdrom),
 $ id
 uid=1000(admin) gid=1000(admin) groups=1000(admin),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev)
 //}
-出力の読み方：
-
- * 自分のユーザ名やユーザID、所属グループがわかる
- * 現在のユーザがadminの場合 $ id admin と同じ出力である
-
+出力がadminの場合と同じであることに注意してほしい。
 
 
 
@@ -125,7 +121,7 @@ $ id -u admin
 //}
 ユーザ名adminのユーザIDが1000であることが分かる
 
-#@# X-TODO: TIPS shell script or dockerfile (id -u)
+#@# X-TODO: TIPS shell script or dockerfile (id -u), footnote ? note ?
 このオプションをターミナル上で利用することは少ないが、
 シェルスクリプトやDockerfileを書く際には必要な知識である
 

@@ -35,7 +35,7 @@ $ tracepath 192.159.190.35
 7:  122.1.245.193                                        18.817ms
 8:  122.1.245.206                                        21.827ms
 9:  ae-9.a03.tokyjp05.jp.bb.gin.ntt.net                  19.898ms
-10:  ae-5.r32.tokyjp05.jp.bb.gin.ntt.net                  19.778ms asymm 11
+10:  ae-5.r32.tokyjp05.jp.bb.gin.ntt.net                 19.778ms asymm 11
 11:  ae-4.r27.snjsca04.us.bb.gin.ntt.net                 128.045ms
 12:  ae-0.a02.sttlwa01.us.bb.gin.ntt.net                 120.781ms asymm 13
 13:  ae-0.comcast.sttlwa01.us.bb.gin.ntt.net             116.382ms
@@ -46,15 +46,7 @@ $ tracepath 192.159.190.35
 18:  be-1-sur03.bellevue.wa.seattle.comcast.net          149.624ms asymm 19
 19:  50.231.28.130                                       128.459ms asymm 18
 20:  no reply
-21:  no reply
-22:  no reply
-23:  no reply
-24:  no reply
-25:  no reply
-26:  no reply
-27:  no reply
-28:  no reply
-29:  no reply
+   〜省略〜
 30:  no reply
 		Too many hops: pmtu 1280
 		Resume: pmtu 1280
@@ -68,25 +60,13 @@ $ tracepath 192.159.190.35
  ** 東京にあるルータ
  * ホスト名: be-1-sur03.bellevue.wa.seattle.comcast.net
  ** アメリカのAmazon社が持っているルータ
- * 通信時間:19.778ms asymm 11
+ * 通信時間: 19.778ms
 
 
 
 === 知っていると便利なオプション: -n
 
 DNSの検索をせずに処理を実行する。
-
-#@# X-TODO -n の意義
-備考:
-ネットワーク系のコマンドでは、
-@<code>{-n}オプションをつけて実行することを心がけるべきである
-（その手のコマンドには普通@<code>{-n}オプションがあるはず）。
-
-なぜかというと、
-この手のコマンドを実行するのは障害対応の場面であり、
-DNS障害も確認するべき項目の一つだからだ。
-DNS障害に引きづられないよう、
-DNSを使わずにネットワークの動作確認を行うべきである
 
 
 ==== 実行例 
@@ -122,16 +102,24 @@ $ tracepath -n 192.159.190.35
 18:  68.86.96.142                                        150.784ms asymm 19
 19:  50.231.28.130                                       131.109ms asymm 18
 20:  no reply
-21:  no reply
-22:  no reply
-23:  no reply
-24:  no reply
-25:  no reply
-26:  no reply
-27:  no reply
-28:  no reply
-29:  no reply
-30:  no reply
+   〜省略〜
+   30:  no reply
 		Too many hops: pmtu 1280
 		Resume: pmtu 1280
+//}
+
+
+//note[-n][-nオプションの意義]{
+#@# X-TODO -n の意義
+
+ネットワーク系のコマンドでは、
+@<code>{-n}オプションをつけて実行することを心がけるべきである
+（その手のコマンドには普通@<code>{-n}オプションがあるはず）。
+
+なぜかというと、
+この手のコマンドを実行するのは障害対応の場面であり、
+DNS障害も確認するべき項目の一つだからだ。
+DNS障害に引きづられないよう、
+DNSを使わずにネットワークの動作確認を行うべきである
+
 //}

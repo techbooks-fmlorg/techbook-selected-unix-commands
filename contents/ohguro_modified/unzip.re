@@ -3,7 +3,7 @@
 =={unzip} unzip
 
 圧縮されたzipファイルから、ファイルを取り出す（解凍する）コマンド。
-@<code>{zip}コマンドの反対（@<secref>{zip}も参照）
+@<code>{zip}コマンドの反対（@<secref>{zip}節も参照）
 
 === 書式
 
@@ -14,7 +14,7 @@ $ unzip [options] 解凍したいファイル名
 
 === 実行例
 
-test1.txtとtest2.txtが格納されたexample.zipを解凍することを考える
+（test1.txtとtest2.txtが格納されている）example.zipを解凍することを考える。
 
 ==== 実行例 
 

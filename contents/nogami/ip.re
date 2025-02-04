@@ -3,87 +3,41 @@
 =={ip} ip
 
 ネットワークデバイスやルーティング、ポリシーなどの表示や変更ができる。
-
-#@# X-TODO: コラム化がのぞましい (ip object change ...)
-注意：
-ipコマンドによる変更も可能だが、
-これは障害対応の場合のみと考えておいたほうがよい。
-通常、ネットワークの設定は/etc以下の設定ファイルにもとづきOS起動時に行われる。
-ネットワーク関連の変更は/etc以下を適切に変更後、再起動してOSに設定してもらうべきである
-
+演習で使うのは
+@<code>{ip a}
+と
+@<code>{ip r}
+だけだろうから、これくらいは覚えておきたい
 
 
 === 書式
 
 //list[][][fontsize=xx-small]{
-$ ip [ OPTIONS ] OBJECT COMMAND
-$ ip [ OPTIONS ] OBJECT help
+$ ip [ options ] OBJECT COMMAND
+$ ip [ options ] OBJECT help
 //}
 
-OBJECT部分では、
-@<B>{address}（IPアドレス）や
-@<B>{route}（経路情報）など、
-ネットワークの構成要素を指定する。
-COMMAND部分には、そのOBJECTごとのコマンドが利用できる。
-もしコマンドが分からない場合は、OBJECTに関わらずhelpコマンドを指定すればヘルプメッセージが表示される
-
-コマンドを指定しない場合は、たいてい情報の表示が行われる。
-たとえば、
-@<code>{ip address}
-は
-@<code>{ip address show}
-と同じ意味に解釈され、
-現在のIPアドレス情報が表示される
-
-オブジェクト指向言語っぽい書き方をすれば、次のようになるだろう。
-Unixはスペース区切りなので、これを上のように表記すると考えてほしい
-//list[][][fontsize=xx-small]{
-ip->OBJECT->COMMAND();
-
-例：IPアドレスを表示せよ
-ip->address->show();
-//}
+ * OBJECT部分では、
+   @<B>{address}（IPアドレス）や
+   @<B>{route}（経路情報）など、
+   ネットワークの構成要素を指定する。
+ * COMMAND部分には、そのOBJECTごとのコマンドが利用できる。
+ * COMMANDを指定しない場合は、たいてい情報の表示が行われる。
+   たとえば、
+   @<code>{ip address}
+   は
+   @<code>{ip address show}
+   と同じ意味に解釈され、現在のIPアドレス情報が表示される
+ * もしCOMMANDが分からない場合は、
+   OBJECTに関わらずhelpコマンドを指定すればヘルプメッセージが表示される
 
 
-=== 実行例
+=== 実行例: IPアドレス情報を調べる （ip address）
 
-==== 実行例
-
-//list[][][fontsize=xx-small]{
-$ ip
-//}
-
-==== 実行結果
-
-//list[][][fontsize=xx-small]{
-$ ip
-Usage: ip [ OPTIONS ] OBJECT { COMMAND | help }
-       ip [ -force ] -batch filename
-where  OBJECT := { link | address | addrlabel | route | rule | neighbor | ntable |
-                   tunnel | tuntap | maddress | mroute | mrule | monitor | xfrm |
-                   netns | l2tp | fou | tcp_metrics | token | netconf }
-       OPTIONS := { -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] |
-                    -h[uman-readable] | -iec |
-                    -f[amily] { inet | inet6 | ipx | dnet | mpls | bridge | link } |
-                    -4 | -6 | -I | -D | -B | -0 |
-                    -l[oops] { maximum-addr-flush-attempts } | -br[ief] |
-                    -o[neline] | -t[imestamp] | -ts[hort] | -b[atch] [filename] |
-                    -rc[vbuf] [size] | -n[etns] name | -a[ll] | -c[olor]}
-//}
-ipコマンドで利用可能なサブコマンド・オプションについて示されている。
-
-@<B>{わからないときは、あえてエラーを起こすようなコマンドを実行し、ヘルプメッセージを表示させる技}である。
-@<B>{ほぼ、どんなときでも有用}なので覚えておくと良い
-（注：OSを停止させるコマンド群では、ヘルプメッセージなど出さずにPCが落ちてしまうので気をつけること）
-
-
-=== コマンド
-
+address オブジェクト（省略してaも可）を用いて、
 ネットワークインターフェース(データを送受信するための接続ポイント)に関連するIPアドレス情報を確認できる。
 
-==== address （省略してaも可）オブジェクト
-
-===== 実行例
+==== 実行例
 
 //list[][][fontsize=xx-small]{
 $ ip address
@@ -91,38 +45,43 @@ $ ip a
 //}
 どちらも同じ結果が出力される。
 
-===== 実行結果
+==== 実行結果
 
 //list[][][fontsize=xx-small]{
-qlen 1
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-    inet 127.0.0.1/8 scope host lo
-       valid_lft forever preferred_lft forever
-    inet6 ::1/128 scope host 
-       valid_lft forever preferred_lft forever
-2: ens5: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc mq state UP group default qlen 1000
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+   〜省略〜
+2: enp4s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc mq state UP group default qlen 1000
     link/ether 0a:16:41:0c:9e:43 brd ff:ff:ff:ff:ff:ff
     inet 172.31.13.152/20 brd 172.31.15.255 scope global ens5
        valid_lft forever preferred_lft forever
     inet6 fe80::816:41ff:fe0c:9e43/64 scope link 
        valid_lft forever preferred_lft forever
 3: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
-    link/ether 02:42:74:ff:c1:b0 brd ff:ff:ff:ff:ff:ff
-    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
-       valid_lft forever preferred_lft forever
+   〜省略〜
 //}
 
- * qlen:	キューの長さ(2つ目がens5,3つ目にdocker0という名称がついている。)
- * inet:	ipv4アドレス/サブネットマスクが記載されている。
- * inet6:	ipv6アドレスが記載されている。
- * mtu:		1回に送信できるデータパケットの最大サイズ
- * link/ether:	MACアドレス(各ネットワークインターフェースに割り当てられた一意の物理アドレス)が書かれている。
+最重要の確認項目は次の２つ。
 
-==== route （省略してrも可）オブジェクト
+ *  inet:	ipv4アドレス/サブネットマスクが記載されている。
+ ** 上の例では、172.31.13.152/20
+ *  link/ether:	MACアドレス(各ネットワークインターフェースに割り当てられた一意の物理アドレス)が書かれている。
+ ** 上の例では、0a:16:41:0c:9e:43
 
+左端の数字に特別な意味はない。
+@<code>{2: enp4s0:}の@<code>{enp4s0}部分はネットワークインターフェイスの名前である。
+この名前はOSが割り当てるため、OSやハードウエア構成によって異なる値を取ることに注意。
+あくまでもenp4s0は一例である。
+一昔前までLinuxではeth0のような名前の付け方をしていたが、
+最近、enp4s0のようなハードウエア情報に基づく名前の付け方に変わった
+（最初からそうしておけばよかったのに！と思ったあなたは同志です:-）
+
+
+=== 実行例: IPアドレス情報を調べる （ip route）
+
+route オブジェクト（省略してrも可）を指定すると、
 ルーティング(ネットワークの経路情報)を出力する。
 
-===== 実行例
+==== 実行例
 
 //list[][][fontsize=xx-small]{
 $ ip route
@@ -130,7 +89,7 @@ $ ip r
 //}
 どちらも同じ結果が出力される。
 
-===== 実行結果
+==== 実行結果
 
 //list[][][fontsize=xx-small]{
 default via 210.128.53.201 dev enp3s8 onlink 
@@ -142,9 +101,36 @@ default via 210.128.53.201 dev enp3s8 onlink
 210.128.53.248/29 dev enp2s0 proto kernel scope link src 210.128.53.249
 //}
 
- * default:		デフォルトゲートウェイ(宛先がルーティングテーブルに存在しない場合に転送するルーター)
- * via ipアドレス:	次に情報を渡されるルーターのipアドレスを示している。
- * dev enp:		送信元のネットワークデバイス名
- * proto kernel:	ルートを作成したルーティングプロトコル
- * scope link:		送信先の範囲、linkなら自分のグループのネットワークであることを示している。
- * src ipアドレス:	送信元のネットワークデバイスのipアドレス
+ * 1行目のdefault行はデフォルトルートの情報
+ ** デフォルトルートとは、宛先がマッチしない場合の転送先ルータ。
+    「マッチしない」とは2行目以降のネットワークに該当するものがないこと
+ ** @<code>{default via 210.128.53.201}の@<code>{210.128.53.201}が転送先
+ ** dev enp3s8 は210.128.53.201が存在するネットワークのインターフェイス（デバイス）名。
+    一つのPCにネットワークインターフェイスは複数ありうるので、それを区別するための情報。
+    このenp3s8のような名前は@<code>{ip address show}で表示されていたことを思い出せ
+ * 2行目以降はネットワーク（IPアドレス/マスク）ごとのルーティング情報
+ ** 例えば2行目の@<code>{210.128.53.200/29}は、
+    @<code>{210.128.53.200/29}というアドレス範囲への通信のルーティング情報
+ ** dev enp3s8のenp3s8は、
+    @<code>{210.128.53.200/29}が存在するネットワークのインターフェイス（デバイス）名。
+ ** src 210.128.53.204のIPアドレスはネットワークインターフェイス（デバイス）のIPアドレス。    つまりenp3s8に付いているIPアドレスと同じ
+
+
+===[column]{column-ip}
+
+ipコマンドによる設定変更も可能だが、
+これは障害対応の場合にのみ許される作業と考えておいたほうがよい。
+
+通常、ネットワークの設定は/etc以下の設定ファイルにもとづきOS起動時に行われる。
+ネットワーク関連の変更は/etc以下を適切に変更後、再起動してOSに設定してもらうべきである
+
+ちなみに、オブジェクト指向言語っぽい書き方をすれば、次のようになるだろう。
+Unixはスペース区切りなので、これを上のように表記すると考えてほしい
+//list[][][fontsize=xx-small]{
+ip->OBJECT->COMMAND();
+
+例：IPアドレスを表示せよ
+ip->address->show();
+//}
+
+===[/column]

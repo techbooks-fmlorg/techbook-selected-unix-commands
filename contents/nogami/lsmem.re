@@ -29,8 +29,15 @@ Memory block size:       128M
 Total online memory:       1G
 Total offline memory:      0B
 //}
+実用上はサイズの確認くらいだろう。
+@<table>{lsmem}も参照のこと。
 
- * RANGE:		メモリのアドレス範囲(これは1GBを示している。)
- * Memory block size:	 1ブロック当たりのサイズ(1GB/8=128MB)
- * Total online memory:	 使用可能なメモリサイズ(1GB)
- * Total offline memory: 使用不可能なメモリサイズ(このメモリはすべて利用できる)
+#@# X-TODO lsmem table の場所
+//table[lsmem][lsmemの読み方]{
+項目			説明
+------------------------------------------------------------
+RANGE			メモリのアドレス範囲(これは1GBを示している。)
+Memory block size	1ブロック当たりのサイズ(1GB/8=128MB)
+Total online memory	使用可能なメモリサイズ(1GB)
+Total offline memory	使用不可能なメモリサイズ(このメモリはすべて利用できる)
+//}

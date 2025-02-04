@@ -2,7 +2,8 @@
 
 =={curl} curl
 
-HTTPリクエストを利用してデータを取得する。ブラウザの代わりやファイルをダウンロードするといった用途で利用できる。
+HTTPリクエストを利用してデータを取得する。
+ブラウザの代わりやファイルをダウンロードするといった用途で利用できる。
 
 === 書式
 
@@ -12,6 +13,8 @@ $ curl [オプション] URL
 
 === 実行例
 
+ https://api.fml.org/dist/lsform.htmlにアクセスする
+ 
 ==== 実行例
 
 //list[][][fontsize=xx-small]{
@@ -19,7 +22,7 @@ $ curl https://api.fml.org/dist/lsform.html
 //}
 
 
-==== 実行結果 （https://api.fml.org/dist/lsform.htmlにアクセスした場合）
+==== 実行結果
 
 //list[][][fontsize=xx-small]{
 $ curl https://api.fml.org/dist/lsform.html
@@ -34,18 +37,25 @@ $ curl https://api.fml.org/dist/lsform.html
 	<P>
 	<input type="submit" value="buy">
 </form>
-
-------------------------------------------------------------------------
 //}
 
 出力の読み方：
 URL(https://api.fml.org/dist/lsform.html)で指定したlsform.htmlファイルを取得し、htmlファイルの中身を出力している。
 
+===[column]{curl} curlを引数なしで実行するとファイルを作成しない
+
+curlを引数なしで実行した場合、ファイルは作成しない。
+ダウンロードしたコンテンツを、
+画面に表示するだけであることに注意。
+
+ファイルとして保存したいなら、次の@<code>{-O}もしくは@<code>{-o}オプションを使うこと
+
+===[/column]
 
 
 === 知っていると便利なオプション
 
-==== -o (小文字 o)
+==== -o (小文字 o、英小文字のオー、OscarのO)
 
 出力結果をファイルに保存する。
 
@@ -58,7 +68,7 @@ $ curl -o 保存するファイル名 URL
 ===== 実行結果 （https://api.fml.org/dist/www.pyの中身を3w.pyに保存する場合）
 
 //list[][][fontsize=xx-small]{
-$ curl -o 3w.py https://api.fml.org/dist/www.py　　※www.pyをダウンロード
+$ curl -o 3w.py https://api.fml.org/dist/www.py
 	% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 																Dload  Upload   Total   Spent    Left  Speed
 100  9698  100  9698    0     0  99644      0 --:--:-- --:--:-- --:--:-- 99979
@@ -68,7 +78,7 @@ $ ls  ※ディレクトリ内のファイルを確認
 //}
 
 
-==== -O (大文字 O)
+==== -O (大文字 O、英大文字のオー、OscarのO)
 
 出力結果をリモートファイルと同じ名前で保存する。
 
@@ -83,7 +93,7 @@ $ curl -O URL
 ===== 実行結果 （https://api.fml.org/dist/www.pyを保存する場合）
 
 //list[][][fontsize=xx-small]{
-$ curl -O https://api.fml.org/dist/www.py　　※www.pyをダウンロード
+$ curl -O https://api.fml.org/dist/www.py
 	% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 																Dload  Upload   Total   Spent    Left  Speed
 100  9698  100  9698    0     0  99644      0 --:--:-- --:--:-- --:--:-- 99979

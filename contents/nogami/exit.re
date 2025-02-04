@@ -40,7 +40,8 @@ Script done.
 Connection to 16.32.64.128 closed.
 user:~$   
 //}
-ssh先からログアウトして、Windowsのターミナルに戻る
+ssh先からログアウトして、Windowsのターミナルに戻る。
+出力例の最終行@<code>{user:~$ }はSSH元のPCのターミナルに戻ってきた様子。
 
 
 #@# X-TODO: これはWindowsのターミナル画面の図を貼るべきなのでは？
@@ -49,9 +50,8 @@ ssh先からログアウトして、Windowsのターミナルに戻る
 //list[][][fontsize=xx-small]{
 user$ exit
 //}
-（実行例1の続きで）いまWindowsのターミナルに戻っている。
+（実行例1の続きで）いまはWindowsのターミナルに戻っている。
 その上で、もういちどexitを実行すると
-
 
 ==== 実行結果2
 

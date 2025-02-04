@@ -14,23 +14,22 @@ OSによっては別途インストールが必要である
 //list[][][fontsize=xx-small]{
 $ aws [options] command subcommand [parameters]
 //}
-command部分とsubcommand部分の指定は必須である。
-[options]と[parameters]はオプション
 
-おおむねcommand部分にはサービス名（例：ec2、s3）を指定する。
-subcommand部分では、そのcommandサービス固有の動作指定を行う
+ * command部分とsubcommand部分の指定は必須である
+ ** command部分にはサービス名（例：ec2、s3）を指定する
+ ** subcommand部分では、そのcommandサービス固有の動作指定を行う
+ * [options]と[parameters]はオプション
 
 
-=== 実行例 ＜引数がないためエラー＞
+=== 実行例
+
+==== 実行例 （引数がなくエラー、ヘルプメッセージが表示される）
 
 //list[][][fontsize=xx-small]{
 $ aws
 //}
 
-TIPS:
-わざとエラーメッセージを表示して、コマンドの使い方を思い出そうとするベテランの技:-)
-
-=== 実行結果
+==== 実行結果
 
 //list[][][fontsize=xx-small]{
 $ aws
@@ -42,7 +41,12 @@ To see help text, you can run:
 
 aws: error: the following arguments are required: command
 //}
-aws単体だとエラーが表示される
+aws単体だとエラーが表示される。
+
+備考：これは、
+コマンドの使い方がわからない場合に、
+「わざとエラーを起こしてヘルプメッセージを表示させる」という技。
+ほぼ、どんなときでも便利な技なので身につけたいところだ。
 
 
 === aws s3 subcommand
@@ -51,109 +55,117 @@ awsで使えるコマンドは様々であるが、今回はサービスの一�
 
 @<B>{S3（Simple Storage Service）}はAWSを代表するサービスの一つである。
 きわめて耐久性が高く、
-@<B>{99.999999999％（イレブン・ナイン）を超えるデータ耐久性}を唱うサービス
+@<B>{99.999999999％（イレブン・ナイン）を超えるデータ耐久性}を唱う。
 
 S3の代表的な使い方は
 「ストレージサービス（データの長期保存）」と
 「静的Webサイト(事前にHTMLを作成し、その通りに動くサイト)の公開」である
 
-S3を利用する際には、まずバケットと呼ばれるファイルの入れ物を作成する。
+S3を利用する際には、まず@<B>{バケット}と呼ばれるファイルの入れ物を作成する。
 これはUnixのディレクトリやWindowsのフォルダに相当するものと考えて良い。
 ユーザは、このバケットにファイルをアップロードしていくことになる
 
 awsコマンドでS3サービスを呼び出す場合、command部分にはs3を指定する。
-subcommandで様々なファイル操作が行える。
-たとえば、
-バケットの内部を確認する際はsubcommnadにlsを、
-データを送受信する際には、
-cpもしくはsync(cpはファイル、syncはバケットとフォルダを同期)をsubcommnadに指定する。
+subcommandで様々なファイル操作が行える。例：
 
-=== 実行例 ＜S3とのファイルのやりとり＞
+ * バケットの内部を確認する際 ls 
+ * データの送受信は cp もしくは sync
+ ** cpはファイル、syncはバケットとフォルダを同期
+ ** 注：操作方法はcpもsyncも同じなのでsyncの実行例は省略する
 
-@<B>{注意：前提としてawsのec2にログインしている状態である。}
 
-バケットの中身を確認する
+==== 前提
+
+以下の実行例では、次の前提がある
+
+ *  @<code>{$ }は、AWSのEC2にログインしている状態での操作である
+ ** 今は、ユーザadminのホームディレクトリ(/home/admin)にいる
+ ** このディレクトリにはwww.pyファイルとhtdocsディレクトリがある想定
+ *  事前にAWS S3の管理画面でバケットを作成した
+ ** バケット名はtestBucket
+ *  バケットはURLで指定する。
+     書式は@<code>{プロトコル://バケット名}
+ ** @<code>{s3://testBucket}
+
+=== 実行例: S3バケットの中身を確認する (aws s3 ls)
+
+@<code>{aws s3 ls}でバケットの中身を確認できる。
+lsコマンドの素直な拡張といえる
+（@<secref>{ls}節も参照）
+
+==== 書式
+
 //list[][][fontsize=xx-small]{
-$ aws s3 ls S3-URI(S3のURLのようなもの)
+$ aws s3 ls バケット
 //}
-S3-URIは「S3://設定した名前」という形式である。
+
+==== 実行例
 
 //list[][][fontsize=xx-small]{
-ファイルの送信 $ aws s3 cp ファイル名 S3-URI
-
-ファイルの受信 $ aws s3 cp S3-URI/ファイル名 (ファイルを入れたいディレクトリ名/)受信したときのファイル名
+$ aws s3 ls s3://testBucket
 //}
-データの受信の際にディレクトリを指定しなかった場合は、現在開いているディレクトリに保存される。
+
+==== 実行結果
 
 //list[][][fontsize=xx-small]{
-admin@16.32.64.128$ aws s3 ls s3://b2902900  #s3(b2902900)内のバケットを確認
+$ aws s3 ls s3://testBucket
 hello.py
-
-admin@16.32.64.128$ ls  #現在開いているディレクトリ内のファイルを確認している
-www.py   htdocs
-www.pyというファイルととhtdocsという名前のディレクトリがある
 //}
+バケットにファイルhello.pyがあると表示されている
+
+
+
+=== 実行例: ファイルをS3に送る (aws s3 cp)
+
+EC2上のwww.pyをS3バケットにコピーする
+
+==== 書式
 
 //list[][][fontsize=xx-small]{
-admin@16.32.64.128$ aws s3 cp www.py s3://b2902900
-# ec2内のwww.pyをs3(b2902900)にコピーしている
-admin@16.32.64.128$ aws s3 cp s3://b2902900/hello.py hello.py
-# s3(b2902900)内のバケットにあるhello.pyをec2内にhello.pyという名前でコピーしている
+$ aws s3 cp ファイル名 バケット
 //}
 
+==== 実行例
+
 //list[][][fontsize=xx-small]{
-admin@16.32.64.128$ aws s3 ls s3://b2902900
-
-$ ls
-
+$ aws s3 cp ファイル名 s3://testBucket
 //}
 
-
-=== 実行結果(s3 cp)
+==== 実行結果
 
 //list[][][fontsize=xx-small]{
-admin@16.32.64.128$ aws s3 ls s3://b2902900
+$ aws s3 cp www.py s3://testBucket
+//}
+
+コピーされたか？は@<code>{aws s3 ls}するかAWS S3の管理画面で確認できる
+//list[][][fontsize=xx-small]{
+$ aws s3 ls s3://testBucket
 hello.py   www.py
+//}
 
-admin@16.32.64.128$ ls
+
+=== 実行例: S3からファイルを取り出す (aws s3 cp)
+
+==== 書式
+
+//list[][][fontsize=xx-small]{
+$ aws s3 cp s3://testBucket/ファイル名 .
+$ aws s3 cp s3://testBucket/ファイル名 ファイル名
+$ aws s3 cp s3://testBucket/ファイル名 ディレクトリ名
+//}
+
+==== 実行例
+
+//list[][][fontsize=xx-small]{
+$ aws s3 cp s3://testBucket/hello.py hello.py
+//}
+S3バケットにあるhello.pyをec2内にhello.pyという名前でコピーする
+
+==== 実行結果
+
+//list[][][fontsize=xx-small]{
+$ aws s3 cp s3://testBucket/hello.py hello.py
+$ ls
 hello.py   www.py   htdocs
 //}
-この結果からs3のバケットにはwww.pyがEC2から送信されて、EC2にはhello.pyがs3バケットからec2に受信したのがわかる。
-
-=== 実行例(s3 sync)
-
-※前提としてawsのec2にログインしている状態である。
-//list[][][fontsize=xx-small]{
-データの送信 $ aws s3 sync ディレクトリ名 S3-URI
-
-データの受信 $ aws s3 sync S3-URI ディレクトリ名
-admin@16.32.64.128$ cd htdocs  #htdocsディレクトリに移動
-
-admin@16.32.64.128$ ls  #htdocs内のファイルを確認
-index.html   index2.html
-
-admin@16.32.64.128$ aws s3 ls s3://b2902900  #s3(b2902900)内のバケットを確認
-hello.py   www.py
-
-admin@16.32.64.128$ aws s3 sync ./ s3://b2902900　 # ./はカレントディレクトリ(今開いてるディレクトリ)を表している。
-#ec2のカレントディレクトリ(htdocs)をs3(b2902900)内のバケットに送信している
-
-admin@16.32.64.128$ aws s3 ls s3://b2902900  #s3(b2902900)内のバケットを確認
-
-admin@16.32.64.128$ aws s3 sync s3://b2902900 ./
-#s3(b2902900)内のバケットをec2のカレントディレクトリ(htdocs)に送信している
-
-admin@16.32.64.128$ ls
-
-//}
-=== 実行結果(s3 sync)
-
-//list[][][fontsize=xx-small]{
-admin@16.32.64.128$ aws s3 ls s3://b2902900
-hello.py   index.html   index2.html   www.py
-
-admin@16.32.64.128$ ls
-hello.py   index.html   index2.html   www.py
-//}
-syncコマンドでs3://b2902900にindex.htmlとindex.htmlがアップロードされ、s3://b2902900内に4つのファイルが入り、
-その後syncコマンドでb2902900から計4つのファイルを受信している。
+EC2上にhello.pyファイルが増えたことが分かる
