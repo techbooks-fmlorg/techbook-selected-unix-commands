@@ -42,15 +42,14 @@ $ curl https://api.fml.org/dist/lsform.html
 出力の読み方：
 URL(https://api.fml.org/dist/lsform.html)で指定したlsform.htmlファイルを取得し、htmlファイルの中身を出力している。
 
-===[column]{curl} curlを引数なしで実行するとファイルを作成しない
+//note[curl][curlを引数なしで実行するとファイルを作成しない]{
 
 curlを引数なしで実行した場合、ファイルは作成しない。
 ダウンロードしたコンテンツを、
 画面に表示するだけであることに注意。
 
 ファイルとして保存したいなら、次の@<code>{-O}もしくは@<code>{-o}オプションを使うこと
-
-===[/column]
+//}
 
 
 === 知っていると便利なオプション

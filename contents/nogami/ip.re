@@ -116,7 +116,7 @@ default via 210.128.53.201 dev enp3s8 onlink
  ** src 210.128.53.204のIPアドレスはネットワークインターフェイス（デバイス）のIPアドレス。    つまりenp3s8に付いているIPアドレスと同じ
 
 
-===[column]{column-ip}
+//note[column-ip][ipコマンドによる設定変更は原則おこなわない]{
 
 ipコマンドによる設定変更も可能だが、
 これは障害対応の場合にのみ許される作業と考えておいたほうがよい。
@@ -133,4 +133,4 @@ ip->OBJECT->COMMAND();
 ip->address->show();
 //}
 
-===[/column]
+//}
