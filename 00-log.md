@@ -10,6 +10,10 @@ renameするとgithub側の修正が面倒かつクリティカルなので、
 ポストプロダクションとレビューの作業は v2-draft-post-production ブランチで行い、
 せめて v2.0.0-rc1 くらいになった段階で main ブランチへマージする予定
 
+なお、作業開始時に次のタグ v2.0.0-draft-closed-20250109 と v2.0.0-post-production-start
+を打っておいた（どちらも同じcommitを指している）。
+これ以降の詳細は[TAGS](TAGS)を参照
+
 ```
 $ git branch
   main
