@@ -1,6 +1,6 @@
 #@# X-TODO pwd -L -P の話をするべきか？
 
-=={pwd} pwd
+=={pwd} @<term>{pwd}
 
 自分が現在作業しているディレクトリを@<B>{絶対パスで表示}する。
 pwdは「Print Working Directory」もしくは「Present Working Directory」の略。

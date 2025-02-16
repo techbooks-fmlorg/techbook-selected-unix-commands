@@ -1,6 +1,6 @@
-=={logout} logout
+=={logout} @<term>{logout}
 
-@<B>{exit}コマンドと同様に、SSH先のLinux/Unixからログアウトできる。
+@<B>{exit}コマンドと同様に、SSH先のLinux/Unixから@<idx>{ログアウト((ろぐあうと))}できる。
 
 @<secref>{exit}節も参照のこと。
 

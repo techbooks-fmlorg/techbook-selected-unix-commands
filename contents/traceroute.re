@@ -1,6 +1,6 @@
 #@# 
 
-=={traceroute} traceroute
+=={traceroute} @<term>{traceroute}
 
 宛先にパケットを送信し、宛先までに通過する各ルータのIPアドレスを記録する。記録されたIPアドレスによって、宛先のホストまでのネットワーク経路を可視化するために利用する。
 
@@ -24,7 +24,7 @@ $ traceroute [options] DESTINATION
 
 
 //note[][Windowsでもネットワーク障害切り分けにpingとtracertが使える]{
-Windowsのコマンドプロンプトでも@<B>{ping}と@<B>{tracert}コマンド(Windows版のtraceroute)が利用できる。
+Windowsのコマンドプロンプトでも@<B>{@<idx>{ping}}と@<B>{@<idx>{tracert}}コマンド(@<idx>{traceroute<<>>Windows版---((ういんどうずばん))})が利用できる。
 ただしMicrosoftが、いちから再実装したものらしく、
 オプション等がUnixと異なるため注意が必要だ。
 それでも非常時に最低限のデバックくらいは出来るので、
