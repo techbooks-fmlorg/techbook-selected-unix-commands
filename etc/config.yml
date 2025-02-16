@@ -368,7 +368,7 @@ pdfmaker:
   # image_scale2width: true
   #
   # 索引
-  makeindex:                      # true なら本の巻末に索引をつける
+  makeindex: true                      # true なら本の巻末に索引をつける
   # 索引作成コマンドの設定
   makeindex_command: upmendex          # 索引を生成するコマンド（デフォルト値：mendex）
   makeindex_options: "-q -g"           # 索引見出しを「あ か さ た な は …」にする
