@@ -43,6 +43,8 @@ user:~$
 ssh先からログアウトして、Windowsのターミナルに戻る。
 出力例の最終行@<code>{user:~$ }はSSH元のPCのターミナルに戻ってきた様子。
 
+#@# X-TODO user:~$ -> windows example
+
 
 #@# X-TODO: これはWindowsのターミナル画面の図を貼るべきなのでは？
 ==== 実行例2 （Windowsのターミナルアプリからログアウトする）
@@ -52,6 +54,8 @@ user$ exit
 //}
 （実行例1の続きで）いまはWindowsのターミナルに戻っている。
 その上で、もういちどexitを実行すると
+
+#@# X-TODO user:~$ -> windows example
 
 ==== 実行結果2
 

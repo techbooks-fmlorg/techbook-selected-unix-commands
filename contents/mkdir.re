@@ -10,7 +10,7 @@
 $  mkdir [option]... DIRECTORY...
 //}
 
- * 引数のDIRECTORYは必須。作成するディレクトリを少なくとも1つ指定する必要がある
+ * 引数のDIRECTORYは必須。作成するディレクトリを少なくとも1つは指定する必要がある
  * 引数は可変長。作成したいディレクトリは、引数として複数つなげて書けば良い。
    スペース区切り
 
@@ -19,7 +19,7 @@ $  mkdir [option]... DIRECTORY...
 
 ==== 前提
 
-現状の確認を@<code>{ls}コマンドで行う
+現状の確認は@<code>{ls}コマンドで行える。
 //list[][][fontsize=xx-small]{
 $ ls
 www.py htdocs/ 

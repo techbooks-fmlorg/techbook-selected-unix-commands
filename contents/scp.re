@@ -1,11 +1,11 @@
-#@# 
+#@#
+
+//footnote[ssh-protocol][SSH (Secure SHell) protocol]
 
 =={scp} @<term>{scp}
 
-SSHプロトコルを利用して、自分のコンピュータのファイルを他のコンピュータに転送するコマンド。
+SSHプロトコル@<fn>{ssh-protocol}を利用して、自分のコンピュータのファイルを他のコンピュータに転送するコマンド。
 scpは「Secure Copy」の略。
-
-実際に使う際は、コピー元のパスとコピー先のパスを指定する。
 
 === 書式
 
@@ -14,8 +14,9 @@ $ scp [options] SOURCE... TARGET
 //}
 
  * 基本的に@<code>{cp}コマンドのSSH版。
-   @<code>{scp コピー元ファイル コピー先ファイル}のように使う。
-   コピー先ファイルがネットワークの向こう側でも良いところが@<code>{cp}と異なる
+   「@<code>{scp コピー元ファイル コピー先ファイル}」のように使う。
+   コピー先ファイルがネットワークの向こう側でも良いところが@<code>{cp}コマンドと異なる。
+   @<secref>{cp}節も参照
  * @<code>{cp}コマンドと同じく、TARGET部分はディレクトリでも良い   
  * @<code>{cp}コマンドと同じく、
    TARGETがディレクトリの場合、「SOURCE...」の部分は複数のファイルでも良い
@@ -46,7 +47,7 @@ $ scp sample.txt testuser@example:/home/test/
 
 ==== 実行例 
 
-sampledirディレクトリを、サーバexampleの/home/testディレクトリへコピーする
+sampledirディレクトリ以下すべてを、サーバexampleの/home/testディレクトリへコピーする
 
 //list[][][fontsize=xx-small]{
 $ scp -r sampledir testuser@example:/home/test/

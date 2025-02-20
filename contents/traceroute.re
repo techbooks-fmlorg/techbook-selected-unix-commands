@@ -10,8 +10,8 @@
 ただし、
 なぜかUbuntuには@<B>{traceroute}ではなく@<B>{tracepath}コマンドが入っているらしい。
 
-@<B>{traceroute}と@<B>{tracepath}の基本的な使い方は一緒。
-使い方の詳細は@<B>{tracepath}@<secref>{tracepath}節を参照
+@<B>{traceroute}と@<B>{tracepath}の基本的な使い方は一緒なので、
+詳細は@<B>{tracepath}@<secref>{tracepath}節を参照
 
 
 === 書式
@@ -20,13 +20,13 @@
 $ traceroute [options] DESTINATION
 //}
  * DESTINATIONはホスト名かIPアドレス
- * @<B>{-n} オプションあります
+ * @<B>{-n} オプションあり
 
 
 //note[][Windowsでもネットワーク障害切り分けにpingとtracertが使える]{
 Windowsのコマンドプロンプトでも@<B>{@<idx>{ping}}と@<B>{@<idx>{tracert}}コマンド(@<idx>{traceroute<<>>Windows版---((ういんどうずばん))})が利用できる。
 ただしMicrosoftが、いちから再実装したものらしく、
-オプション等がUnixと異なるため注意が必要だ。
+オプションがUnixと異なるため注意が必要だ。
 それでも非常時に最低限のデバックくらいは出来るので、
 Windowsにもパチモノが搭載されていることを覚えておくと良い。
 //}

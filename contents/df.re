@@ -33,16 +33,20 @@ tmpfs              99332       0     99332   0% /run/user/1000
 
 読み方は@<table>{df}のとおり
 
+#@# X-TODO table 2.4 verify it!
+#@# X-TODO table 2.4 file system
 //table[df][dfの読み方]{
 dfの一行目	説明
 ----------------------------------------
 Filesystem	各ファイルシステム
-1K-blocks	使用できるディスク容量、基本単位はKBである(udevは485284KBである)
+　		（OSが割り当てたデバイスの識別子もしくは種類）
+1K-blocks	使用できるディスク容量、基本単位はKBである
+　		例：udevファイルシステムの容量は485284KBである
 Used		使用しているディスク容量
 Available	ディスクの空き容量
 Use%		ディスクの使用率
 Mounted on	どのフォルダでファイルシステムが使えるかを示している
-　		(udevは/devというフォルダが使える)。
+　		例：udevは/devというフォルダとして使える
 //}
 
 
@@ -69,7 +73,7 @@ tmpfs                  5     0         5   0% /run/lock
 /dev/xvda15          124    12       113  10% /boot/efi
 tmpfs                 98     0        98   0% /run/user/1000   
 //}
-udevの485284KB/1024=473.9…からMBに変換されていることがわかる。
+たとえば2行目のudevは、@<code>{485284KB/1024 = 474（473.9を繰り上げ）}なので、MBに変換された値が表示されている。
 
 
 //note[df][dfをGBやTB単位で表示したい]{

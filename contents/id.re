@@ -46,7 +46,7 @@ uid=1000(admin) gid=1000(admin) groups=1000(admin),4(adm),20(dialout),24(cdrom),
 
  * uid=1000(admin):				ユーザ名がadmin、ユーザIDが1000
  * gid=1000(admin):				グループ名がadmin、グループIDが1000
- * groups=1000(admin),4(adm),20(dialout):	admin,adm,dialoutグループに所属
+ * groups=1000(admin),4(adm),20(dialout):	ユーザadminはadmin,adm,dialoutグループにも所属している
 
 
 
@@ -95,7 +95,7 @@ uid=0(root) gid=0(root) groups=0(root)
 
 === 知っていると便利なオプション:  -u
 
-ユーザIDのみを出力する。
+ユーザIDのみを出力する@<fn>{id-u}。
 
 
 
@@ -122,6 +122,4 @@ $ id -u admin
 ユーザ名adminのユーザIDが1000であることが分かる
 
 #@# X-TODO: TIPS shell script or dockerfile (id -u), footnote ? note ?
-このオプションをターミナル上で利用することは少ないが、
-シェルスクリプトやDockerfileを書く際には必要な知識である
-
+//footnote[id-u][このオプションをターミナル上で利用することは少ないが、シェルスクリプトやDockerfileを書く際には必要な知識である]

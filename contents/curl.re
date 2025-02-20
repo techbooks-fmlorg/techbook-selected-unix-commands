@@ -64,7 +64,7 @@ curlを引数なしで実行した場合、ファイルは作成しない。
 $ curl -o 保存するファイル名 URL
 //}
 
-===== 実行結果 （https://api.fml.org/dist/www.pyの中身を3w.pyに保存する場合）
+===== 実行結果 （https://api.fml.org/dist/www.pyの中身を3w.pyとして保存する場合）
 
 //list[][][fontsize=xx-small]{
 $ curl -o 3w.py https://api.fml.org/dist/www.py
@@ -89,7 +89,7 @@ $ curl -O URL
 //}
 
 
-===== 実行結果 （https://api.fml.org/dist/www.pyを保存する場合）
+===== 実行結果 （https://api.fml.org/dist/www.pyをwww.pyとして保存する場合）
 
 //list[][][fontsize=xx-small]{
 $ curl -O https://api.fml.org/dist/www.py
@@ -97,7 +97,8 @@ $ curl -O https://api.fml.org/dist/www.py
 																Dload  Upload   Total   Spent    Left  Speed
 100  9698  100  9698    0     0  99644      0 --:--:-- --:--:-- --:--:-- 99979
 
-$ ls  ※ディレクトリ内のファイルを確認
+$ ls  @<balloon>{ディレクトリ内のファイルを確認}
 www.py
 //}
+#@# @<balloon>{ディレクトリ内のファイルを確認} verify
 

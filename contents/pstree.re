@@ -2,7 +2,7 @@
 
 =={pstree} @<term>{pstree}
 
-@<idx>{プロセス((ぷろせす))<<>>の親子関係をツリー状に表示する((のおやこかんけいをつりーじょうにひょうじする))}。
+@<idx>{プロセス((ぷろせす))<<>>の親子関係をツリー状に((のおやこかんけいをつりーじょうに))}アスキーアートで表示する
 
 === 書式
 
@@ -24,7 +24,7 @@ $ pstree
 systemd─┬─2*[agetty]
         ├─dbus-daemon
         ├─polkitd───2*[{polkitd}]
-        ├─sshd───sshd───sshd───bash───script───bash───pstree　※
+        ├─sshd───sshd───sshd───bash───script───bash───pstree　@<balloon>{(1)}
         ├─sudo───bash─┬─bash
         │             └─inotifywait
         ├─systemd───(sd-pam)
@@ -37,5 +37,4 @@ systemd─┬─2*[agetty]
         └─unattended-upgr
 //}
 
- * @<code>{※}は実際には出力されない
- * この行をみると、 bash(pstreeと入力したターミナル)がpstreeを呼び出していることがわかる
+ * (1)の行をみると、 bash(pstreeと入力したターミナル)がpstreeを呼び出していることがわかる
