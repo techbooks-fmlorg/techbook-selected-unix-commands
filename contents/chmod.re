@@ -68,7 +68,7 @@ x	実行もしくは検索許可ビット
 パーミッションが0664(rw-rw-r--)のtext.txtに0644(rw-r--r--)を設定する。
 
 //list[][][fontsize=xx-small]{
-$ ls -l ※このコマンドでファイルの権限を確認できる
+$ ls -l @<balloon>{このコマンドでファイルの権限を確認できる}
 -rw-rw-r-- 1 admin205 group205 63 Sep 10 16:07 test.txt
 
 $ chmod 644 text.txt
@@ -80,11 +80,11 @@ $ ls -l
 
 ==== 実行結果
 
-※変更前
--rw-rw-r-- 1 admin205 group205 63 Sep 10 16:07 test.txt
+//list[][][fontsize=xx-small]{
+-rw-rw-r-- 1 admin205 group205 63 Sep 10 16:07 test.txt   @<balloon>{変更前}
 
-※変更後
--rw-r--r-- 1 admin205 group205 63 Sep 10 16:07 test.txt
+-rw-r--r-- 1 admin205 group205 63 Sep 10 16:07 test.txt   @<balloon>{変更後}
+//}
 
 ==== 解説
 

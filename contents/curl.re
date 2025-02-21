@@ -72,7 +72,7 @@ $ curl -o 3w.py https://api.fml.org/dist/www.py
 																Dload  Upload   Total   Spent    Left  Speed
 100  9698  100  9698    0     0  99644      0 --:--:-- --:--:-- --:--:-- 99979
 
-$ ls  ※ディレクトリ内のファイルを確認
+$ ls  @<balloon>{ディレクトリ内のファイルを確認}
 3w.py
 //}
 

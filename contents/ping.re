@@ -41,7 +41,7 @@ PING 10.252.0.11 (10.252.0.11) 56(84) bytes of data.
 64 bytes from 10.252.0.11: icmp_seq=2 ttl=64 time=0.042 ms
     〜中略〜
 64 bytes from 10.252.0.11: icmp_seq=7 ttl=64 time=0.018 ms
-^C                                    ※Ctrl-Cを打ち込んだ行
+^C                                    @<balloon>{Ctrl-Cを打ち込んだ行}
 --- 10.252.0.11 ping statistics ---
 7 packets transmitted, 7 received, 0% packet loss, time 6151ms
 rtt min/avg/max/mdev = 0.017/0.027/0.042/0.010 ms
@@ -63,7 +63,7 @@ PING 10.252.0.127 (10.252.0.127) 56(84) bytes of data.
 From 10.252.0.11 icmp_seq=1 Destination Host Unreachable
     〜中略〜
 From 10.252.0.11 icmp_seq=6 Destination Host Unreachable
-^C                                    ※Ctrl-Cを打ち込んだ行
+^C                                    @<balloon>{Ctrl-Cを打ち込んだ行}
 --- 10.252.0.127 ping statistics ---
 7 packets transmitted, 0 received, +6 errors, 100% packet loss, time 6152ms
 pipe 4
