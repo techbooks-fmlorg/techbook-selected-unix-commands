@@ -29,10 +29,11 @@ $ lsblk
 
 ==== 実行結果
 
-#@# X-TODO compile すると、ずれてしまうみたい
+#@# X-TODO 左端の特殊記号のせいでコンパイルすると、ずれるらしい (PENDING)
+#@#        スペースで微調整して少しマシにしたけれど、根本的な解決方法は不明
 //list[][][fontsize=xx-small]{
-NAME     MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
-xvda     202:0    0    8G  0 disk 
+NAME      MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+xvda      202:0    0    8G  0 disk 
 ├─xvda1  202:1    0  7.9G  0 part /
 ├─xvda14 202:14   0    3M  0 part 
 └─xvda15 202:15   0  124M  0 part /boot/efi
