@@ -20,7 +20,7 @@ nanoは、モード変更を使用せず、
 //}
 
 
-#@# X-TODO nano 図のと表の位置調整
+#@# X-TODO nano 図表の位置調整(最後におこなう) (DEFERRED)
 //image[nano][nano画面下のヘルプメッセージ（ショートカットのチートシート）][pos=t]
 
 //table[nano-shortkeys][nanoコマンドのショートカットキー（抜粋）]{
