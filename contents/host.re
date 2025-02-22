@@ -60,9 +60,10 @@ domain name pointerの右に続く
 
 //note[host-dig-and-nslookup][host, dig, nslookupコマンド]{
 
-@<idx>{host} と似たコマンドとして、@<idx>{dig} と @<idx>{nslookup} が存在する。ただし、dig と nslookup コマンドはインストールしていないと使用できない。
-Windows の場合は、host コマンドの代わりに nslookup コマンドが標準搭載されておりインストールすることなく使用できる。dig コマンドはインストールが必要となる。
-デフォルトで使用できるかどうかはOS によるので注意すること。
+@<idx>{host} と似たコマンドとして、@<idx>{dig} と @<idx>{nslookup} も存在する。
+これら3つのうち、どれがデフォルトで使えるか？はOSごとにマチマチであるなので注意しよう。
+もちろんインストールすれば使用できる。
+
+ちなみに、Windows の場合は、nslookup コマンドが標準搭載されている。
 
 //}
-#@# X-TODO hostのノートを再確認
