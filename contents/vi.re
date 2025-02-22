@@ -220,5 +220,10 @@ vi(@<idx>{vim==>>vi})のマニュアルには書いていないようである
 （「わたし、気になります！」というIT古典部気質の人は、
 @<idx>{エンジニア適性((えんじにあてきせい))}があると思う）
 
+コンピュータ開発史についてはYAPCで少しだけ語っています。
+スライドはspeakerdeckにおいてあります（脚注@<fn>{yapc-hakodate-2024}を参照）。
+動画も近々Youtubeに上がると思うのですが、まだ準備中のようです。
+
 //}
-#@# X-TODO add url to YAPC (Internet History)
+
+//footnote[yapc-hakodate-2024][@<href>{https://speakerdeck.com/fmlorg/sierutoperlnoshi-ifen-ke-souitutasi-kao-nodao-ju-ha-dokokaralai-te-dokoheyukunoka-v1-dot-1-0,YAPC::Hakodate 2024 "シェルとPerlの使い分け、 そういった思考の道具は、どこから来て、どこへゆくのか？"}]
