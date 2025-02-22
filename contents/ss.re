@@ -26,14 +26,19 @@ $ ss
 ==== 実行結果
 
 //list[][][fontsize=xx-small]{
-Netid State      Recv-Q Send-Q Local Address:Port                 Peer Address:Port                
-user ESTAB      0      0        * 1031009                         * 0                    
-user ESTAB      0      0       /run/systemd/journal/stdout 874    * 10967                
-     〜 省略 〜
-tcp  ESTAB      0      0       172.31.1.171:41136                 172.31.101.90:nfs 
+Netid State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess
+udp   UNCONN 0      0            0.0.0.0:123        0.0.0.0:*
+      〜 省略 〜
+tcp   LISTEN 0      128          0.0.0.0:22         0.0.0.0:*          
+tcp   LISTEN 0      511          0.0.0.0:80         0.0.0.0:*          
 //}
 実用上は、開いているポート番号（@<code>{:数字}部分）の確認に使うことが多い。
-詳細は@<table>{ss}
+「IPアドレス：ポート番号」形式の部分はソケットの情報である。
+その他の詳細は省略する@<fn>{ss-detail}。
+
+//footnote[ss-detail][きちんとマニュアルに説明がないので、正解はソースコードを参照のこと。@<href>{https://www.kernel.org/pub/linux/utils/net/iproute2/}]
+
+
 
 
 === 知っていると便利なオプション: -l
@@ -106,21 +111,4 @@ Netid State      Recv-Q Send-Q     Local Address:Port       Peer Address:Port
 tcp   LISTEN     0      128        *:59707                  *:*                  
 tcp   LISTEN     0      128        *:40603                  *:*     
       〜 省略 〜
-//}
-
-//table[ss][ssの各列の意味]{
-1行目の各項目	説明
-----------------------------------------------------------------------
-Netid		ネットワーク識別子(ソケットが何を対象としているソケットかを表すもの)
-　		user ... userに対する通信のためのソケット
-　		tcp  ... tcp通信を行うためのソケット
-State		ソケットの状態(ESTABなら接続中、LISTENから接続待ちなど)
-Recv-Q		アプリケーションが読み取ってないデータ量
-　		(0ならデータを適切に処理している)
-Send-Q		アプリケーションが送信していないデータ量
-　		(0ならすべてのデータを送信している)
-Local Address:Port	ソケット通信におけるローカル側
-　    			ソケットファイルパスまたはIPアドレスとポート番号を示す
-Peer Address:Port	ソケット通信における接続先(ピア)側
-　   			ソケットファイルパスまたはIPアドレスとポート番号を示す
 //}
