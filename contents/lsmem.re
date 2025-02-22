@@ -33,7 +33,7 @@ Total offline memory:      0B
 実用上はサイズの確認くらいだろう。
 @<table>{lsmem}も参照のこと。
 
-#@# X-TODO lsmem table の場所
+#@# X-TODO lsmem table の位置調整 (DEFERRED)
 //table[lsmem][lsmemの読み方]{
 項目			説明
 ------------------------------------------------------------

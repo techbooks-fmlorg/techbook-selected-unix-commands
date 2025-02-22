@@ -42,7 +42,7 @@ xvda      202:0    0    8G  0 disk
 詳細は@<table>{lsblk}を参照
 
 #@# X-TODO lsblkの表の内容をチェック
-#@# X-TODO lsblkの表の位置調整
+#@# X-TODO lsblkの表の位置調整 (DEFERRED)
 //table[lsblk][lsblkの表示]{
 1行目		説明
 ----------------------------------------

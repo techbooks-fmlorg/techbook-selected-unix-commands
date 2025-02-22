@@ -46,7 +46,7 @@ Virtualization features:
 @<table>{lscpu}も参照のこと。
 
 
-#@# X-TODO lscpu table の場所
+#@# X-TODO lscpu table の場所 (DEFERRED)
 //table[lscpu][lscpuの読み方(一部)]{
 項目(一部)		説明
 ------------------------------------------------------------
