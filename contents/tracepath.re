@@ -25,26 +25,26 @@ $ tracepath IPアドレス
 //list[][][fontsize=xx-small]{
 $ tracepath 192.159.190.35
 1?: [LOCALHOST]                      pmtu 1280
-1:  LAPTOP-A860U3T2.mshome.net                            1.443ms
-1:  LAPTOP-A860U3T2.mshome.net                            0.383ms
-2:  unifi.localdomain                                     1.811ms
-3:  10.252.0.1                                            1.910ms
-4:  118.23.89.234                                         4.303ms
-5:  118.23.89.77                                          5.230ms
-6:  221.184.5.205                                         6.879ms
-7:  122.1.245.193                                        18.817ms
-8:  122.1.245.206                                        21.827ms
-9:  ae-9.a03.tokyjp05.jp.bb.gin.ntt.net                  19.898ms
-10:  ae-5.r32.tokyjp05.jp.bb.gin.ntt.net                 19.778ms asymm 11
-11:  ae-4.r27.snjsca04.us.bb.gin.ntt.net                 128.045ms
-12:  ae-0.a02.sttlwa01.us.bb.gin.ntt.net                 120.781ms asymm 13
-13:  ae-0.comcast.sttlwa01.us.bb.gin.ntt.net             116.382ms
-14:  be-1211-cs02.portland.or.ibone.comcast.net          147.274ms asymm 16
-15:  be-36131-arsc1.burien.wa.seattle.comcast.net        136.669ms asymm 16
-16:  ae-501-ar01.seattle.wa.seattle.comcast.net          121.145ms asymm 17
-17:  be-2-sur02.bellevue.wa.seattle.comcast.net          152.747ms asymm 20
-18:  be-1-sur03.bellevue.wa.seattle.comcast.net          149.624ms asymm 19
-19:  50.231.28.130                                       128.459ms asymm 18
+1:  LAPTOP-A860U3T2.mshome.net                      1.443ms
+1:  LAPTOP-A860U3T2.mshome.net                      0.383ms
+2:  unifi.localdomain                               1.811ms
+3:  10.252.0.1                                      1.910ms
+4:  118.23.89.234                                   4.303ms
+5:  118.23.89.77                                    5.230ms
+6:  221.184.5.205                                   6.879ms
+7:  122.1.245.193                                  18.817ms
+8:  122.1.245.206                                  21.827ms
+9:  ae-9.a03.tokyjp05.jp.bb.gin.ntt.net            19.898ms             @<balloon>{NCOM,東京}
+10:  ae-5.r32.tokyjp05.jp.bb.gin.ntt.net           19.778ms asymm 11    @<balloon>{ここまで日本国内}
+11:  ae-4.r27.snjsca04.us.bb.gin.ntt.net           128.045ms            @<balloon>{NCOM,サンノゼ}
+12:  ae-0.a02.sttlwa01.us.bb.gin.ntt.net           120.781ms asymm 13
+13:  ae-0.comcast.sttlwa01.us.bb.gin.ntt.net       116.382ms            @<balloon>{ここまでNCOM}
+14:  be-1211-cs02.portland.or.ibone.comcast.net    147.274ms asymm 16   @<balloon>{ここからcomcast}
+15:  be-36131-arsc1.burien.wa.seattle.comcast.net  136.669ms asymm 16
+16:  ae-501-ar01.seattle.wa.seattle.comcast.net    121.145ms asymm 17
+17:  be-2-sur02.bellevue.wa.seattle.comcast.net    152.747ms asymm 20
+18:  be-1-sur03.bellevue.wa.seattle.comcast.net    149.624ms asymm 19
+19:  50.231.28.130                                 128.459ms asymm 18
 20:  no reply
    〜省略〜
 30:  no reply
@@ -52,16 +52,15 @@ $ tracepath 192.159.190.35
 		Resume: pmtu 1280
 //} 
 
-#@# X-TODO comcast == Amazon ???
-出力の読み方：
-日本のサーバからアメリカのAmazon社のサーバを経由していることが分かる。
-一部分だけ解説すると次のとおり
+//footnote[NCOM][NTTコミュニケーション、（旧Verioを買収した）Tier-1のキャリア]
+//footnote[comcast][アメリカのケーブルテレビ大手]
 
- * ホスト名: ae-5.r32.tokyjp05.jp.bb.gin.ntt.net
- ** 東京にあるルータ
- * ホスト名: be-1-sur03.bellevue.wa.seattle.comcast.net
- ** アメリカのAmazon社が持っているルータ
- * 通信時間: 19.778ms
+出力の読み方：
+日本のサーバ〜NCOM@<fn>{NCOM}〜アメリカのComcast@<fn>{comcast}のルータ群を経由していることが分かる。
+14番目のルータのドメイン名にはポートランドとある。
+サンノゼもポートランドもデータセンター銀座である。
+NCOMの海底ケーブルで太平洋を超え（10番目〜11番目）、
+サンノゼで陸揚げし、西海岸を北上して、ポートランドでcomcastのアメリカ内陸ネットワークに入ったことが読み取れる。
 
 
 
