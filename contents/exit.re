@@ -1,8 +1,10 @@
-#@# 
+#@#
+
+//image[windows-command-prompt][WindowsのコマンドプロンプトでAWSにsshし、作業後にexitしてWindowsに戻ってきた様子][scale=1.0]
 
 =={exit} @<term>{exit}
 
-sshやsudoコマンドでログインしたときに@<term>{ログアウト((ろぐあうと))}できる。
+sshやsudoコマンドでログインしたときに@<term>{ログアウト((ろぐあうと))}できる（@<img>{windows-command-prompt}）。
 Windowsなどで、
 ターミナルアプリの画面でexitコマンドを実行した場合は、そのターミナルアプリごと閉じてしまうことに注意
 
@@ -19,7 +21,6 @@ $ exit
 以下、Windows上のターミナルアプリ上でsshコマンドを実行し、
 EC2(AWSのサービスの一つ)上に作成したDebianのサーバにSSHログインしている前提とする
 
-#@# X-TODO: Windowsのターミナル画面の図が欲しいところ
 //list[][][fontsize=xx-small]{
 Windowsのターミナルアプリ ---(SSH)---> Debian GNU/Linxu (EC2)
 //}
@@ -38,24 +39,22 @@ Debian上で@<B>{exit}コマンドを実行する
 admin@16.32.64.128$ exit
 Script done.
 Connection to 16.32.64.128 closed.
+C:\Users\b2902900>
 user:~$   
 //}
 ssh先からログアウトして、Windowsのターミナルに戻る。
 出力例の最終行@<code>{user:~$ }はSSH元のPCのターミナルに戻ってきた様子。
 
-#@# X-TODO user:~$ -> windows example
 
-
-#@# X-TODO: これはWindowsのターミナル画面の図を貼るべきなのでは？
 ==== 実行例2 （Windowsのターミナルアプリからログアウトする）
 
 //list[][][fontsize=xx-small]{
-user$ exit
+C:\Users\b2902900> exit
 //}
 （実行例1の続きで）いまはWindowsのターミナルに戻っている。
 その上で、もういちどexitを実行すると
 
-#@# X-TODO user:~$ -> windows example
+
 
 ==== 実行結果2
 
