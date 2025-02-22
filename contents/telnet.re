@@ -1,4 +1,4 @@
-#@# X-TODO telnet ... 実行例として、ポート番号 13 は適切なのか？
+#@# X-TODO telnet ... 実行例として、ポート番号 13 は適切なのか？ (PENDING)
 
 =={telnet} @<term>{telnet}
 
