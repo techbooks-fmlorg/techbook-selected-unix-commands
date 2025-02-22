@@ -26,11 +26,11 @@ $ ss
 ==== 実行結果
 
 //list[][][fontsize=xx-small]{
-Netid State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess
+Netid State  Recv-Q Send-Q Local Address:Port       Peer Address:PortProcess
 udp   UNCONN 0      0            0.0.0.0:123        0.0.0.0:*
       〜 省略 〜
-tcp   LISTEN 0      128          0.0.0.0:22         0.0.0.0:*          
-tcp   LISTEN 0      511          0.0.0.0:80         0.0.0.0:*          
+tcp   LISTEN 0      128          0.0.0.0:22         0.0.0.0:*
+tcp   LISTEN 0      511          0.0.0.0:80         0.0.0.0:*
 //}
 実用上は、開いているポート番号（@<code>{:数字}部分）の確認に使うことが多い。
 「IPアドレス：ポート番号」形式の部分はソケットの情報である。
@@ -60,8 +60,8 @@ $ ss -l
 
 //list[][][fontsize=xx-small]{
 Netid State      Recv-Q Send-Q Local Address:Port                 Peer Address:Port
-u_str LISTEN     0      128    /root/.pm2/pub.sock 24878          * 0                    
-u_str LISTEN     0      128    /root/.pm2/rpc.sock 24879          * 0  
+u_str LISTEN     0      128    /root/.pm2/pub.sock 24878          * 0
+u_str LISTEN     0      128    /root/.pm2/rpc.sock 24879          * 0
       〜 省略 〜
 tcp   LISTEN     0      128     *:56958                           *:*
 //}
@@ -75,15 +75,15 @@ IPv4のソケットの情報だけを表示する。
 ==== 実行例
 
 //list[][][fontsize=xx-small]{
-$ ss -4  
+$ ss -4
 //}
 
 ==== 実行結果
 
 //list[][][fontsize=xx-small]{
-Netid State      Recv-Q Send-Q Local Address:Port                 Peer Address:Port                
-udp   ESTAB      0      0      127.0.0.1:57674                127.0.0.1:57674                
-tcp   ESTAB      0      0      127.0.0.1:6081                 127.0.0.1:35634                
+Netid State      Recv-Q Send-Q Local Address:Port             Peer Address:Port
+udp   ESTAB      0      0      127.0.0.1:57674                127.0.0.1:57674
+tcp   ESTAB      0      0      127.0.0.1:6081                 127.0.0.1:35634
 tcp   ESTAB      0      0      127.0.0.1:35000                127.0.0.1:48549
       〜 省略 〜
 //}
@@ -108,7 +108,7 @@ $ ss -l4n
 
 //list[][][fontsize=xx-small]{
 Netid State      Recv-Q Send-Q     Local Address:Port       Peer Address:Port
-tcp   LISTEN     0      128        *:59707                  *:*                  
-tcp   LISTEN     0      128        *:40603                  *:*     
+tcp   LISTEN     0      128        *:59707                  *:*
+tcp   LISTEN     0      128        *:40603                  *:*
       〜 省略 〜
 //}
