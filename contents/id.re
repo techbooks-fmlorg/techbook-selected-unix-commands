@@ -121,5 +121,4 @@ $ id -u admin
 //}
 ユーザ名adminのユーザIDが1000であることが分かる
 
-#@# X-TODO: TIPS shell script or dockerfile (id -u), footnote ? note ?
 //footnote[id-u][このオプションをターミナル上で利用することは少ないが、シェルスクリプトやDockerfileを書く際には必要な知識である]
