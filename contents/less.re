@@ -40,8 +40,10 @@ $ less www.py
  ** つまり必要なら編集モードへ移行できるわけである
 
 
-//note[more-and-less][moreとless]{
+//note[more-and-less][moreとless、lessがないならmoreも試してみるとよい]{
 このような操作には元々@<B>{@<idx>{more}}コマンドがあったが、
 その機能強化版として@<B>{less}が開発された
 (moreの反対語なのに強化版という名付け方が御洒落:-)。
+
+いずれにせよ、moreのほうが古いのでlessコマンドがない場合はmoreを試してみるとよい。たいていは、あるはずだ。
 //}
