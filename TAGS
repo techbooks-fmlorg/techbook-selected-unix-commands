@@ -48,3 +48,9 @@ release-1-0-0
 	- added the preface and postscript though it is a workaround.
 	- chapter 1 has only titles, not written.
 	- defer the repository cleanup.
+
+	v2.0.0-alpha.2
+	- contents/{cat,less,logout,man,traceroute}.re added for convenicence.
+	- Index support
+	- rewrite the preface and postscript
+	- reviewed again
