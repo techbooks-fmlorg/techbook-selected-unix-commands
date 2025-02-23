@@ -20,10 +20,10 @@ $ exit
 === 実行例
 
 以下、Windowsのターミナルアプリ上でsshコマンドを実行し、
-EC2上に作成したDebianのサーバにSSHログインしている前提とする
+EC2上に作成した@<idx>{Debian}のサーバにSSHログインしている前提とする
 
 //list[][][fontsize=xx-small]{
-Windowsのターミナルアプリ ---(SSH)---> Debian GNU/Linxu (EC2)
+Windowsのターミナルアプリ ---(SSH)---> Debian GNU/Linux (EC2)
 //}
 
 
@@ -32,7 +32,7 @@ Windowsのターミナルアプリ ---(SSH)---> Debian GNU/Linxu (EC2)
 //list[][][fontsize=xx-small]{
 admin@16.32.64.128$ exit
 //}
-Debian上で@<B>{exit}コマンドを実行する
+@<idx>{Debian}上で@<B>{exit}コマンドを実行する
 
 ==== 実行結果1
 

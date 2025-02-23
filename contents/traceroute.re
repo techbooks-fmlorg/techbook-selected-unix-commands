@@ -6,9 +6,9 @@
 
 歴史的には@<B>{traceroute}コマンドが初出で、
 ほとんどのUnix/Linuxで利用できるのは@<B>{traceroute}コマンドである。
-当然Debian/GNU Linuxにも存在する（デフォルトでは入っていないかもしれないが、その時はapt install traceroute）。
+当然@<idx>{Debian}/GNU Linuxにも存在する（デフォルトでは入っていないかもしれないが、その時はapt install traceroute）。
 ただし、
-なぜかUbuntuには@<B>{traceroute}ではなく@<B>{tracepath}コマンドが入っているらしい@<fn>{vocareum-terminal}。
+なぜか@<idx>{Ubuntu}には@<B>{traceroute}ではなく@<B>{tracepath}コマンドが入っているらしい@<fn>{vocareum-terminal}。
 
 @<B>{traceroute}と@<B>{tracepath}の基本的な使い方は一緒なので、
 詳細は@<B>{tracepath}@<secref>{tracepath}節を参照
