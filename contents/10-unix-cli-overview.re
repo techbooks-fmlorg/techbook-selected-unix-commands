@@ -29,8 +29,7 @@ Unixは素人向けではない。
 いかにキーボードを打つ回数を減らすか？
 そういったプロ向けの設計思想が初心者の敷居を高くしている所以だろう。
 
-
-//image[tty][代表的なターミナル:テレタイプ社のモデル33][scale=0.5]
+//image[shell-interactive][左は対話処理のイメージ。右は代表的なターミナル:Teletype Model 33][scale=1.0]
 
 //footnote[tty][Unixのttyという用語は、このTeletypeに由来する]
 //footnote[tty33]["Teletype Model 33 - 48930224272" by stiefkind is marked with CC0 1.0]
@@ -40,7 +39,20 @@ Unixは素人向けではない。
 #@# X-TODO ch1: 図/写真? Teletype model 33, Windows内のTerminal(app), App拡大図
 =={interactive} 対話処理
 
-@<img>{tty}は、1970年代にUnixが開発されていた当時のターミナル@<fn>{tty33}@<fn>{tty}@<fn>{tty33-tape}である。
+//list[][対話処理（@<img>{shell-interactive}左側を参照）]{
+$                 @<balloon>{(1)「入力待ち」の意思表示としてプロンプトを表示}
+$ ls              @<balloon>{(1)の状態から、(2)ユーザがlsと入力し、ENTERを押す（Unixにlsの依頼が伝わる）}
+www.py htdocs     @<balloon>{(3)（lsの依頼が）処理され、(4)lsの結果が表示される}
+$                 @<balloon>{(5)プロンプトを表示（1.の状態に戻った）}
+//}
+
+@<img>{shell-interactive}（左）は、給仕（OS）と客（ユーザ）との対話イメージである。
+@<img>{shell-interactive}（左）は、上述の操作と対応している。
+これがUnixで言うところの対話処理である。
+
+背景事情を少しだけ説明しよう。
+@<img>{shell-interactive}（右）の機材は、
+1970年代にUnixが開発されていた当時のターミナル@<fn>{tty33}@<fn>{tty}@<fn>{tty33-tape}である。
 ほぼ電動タイプライターだ。
 タイプすると入力がUnixに伝わり、
 処理され、
@@ -55,4 +67,4 @@ Unixからの出力が一行ずつ印刷される。
 ウィンドウシステム上のターミナルアプリ（ターミナルをエミュレーションするソフトウエア）を使うことが普通だ。
 しかしながら、
 見かけはモダンになってはいても、
-やっていることは@<img>{tty}から進化していないことを覚えておきたい。
+やっていることは@<img>{shell-interactive}から進化していないことを覚えておきたい。
