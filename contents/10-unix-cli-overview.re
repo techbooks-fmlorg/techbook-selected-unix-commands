@@ -37,7 +37,7 @@ Unixは素人向けではない。
 
 #@# X-TODO ch1: TSS -> コンピュータ開発史を参照
 #@# X-TODO ch1: 図/写真? Teletype model 33, Windows内のTerminal(app), App拡大図
-== 対話処理
+=={interactive} 対話処理
 
 @<img>{tty}は、この当時のターミナル@<fn>{tty33}@<fn>{tty}である。
 ほぼ電動タイプライターである。
