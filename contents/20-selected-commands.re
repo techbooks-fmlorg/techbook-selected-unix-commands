@@ -4944,13 +4944,7 @@ $ zip example.zip text1.txt text2.txt
 
 #@# 広告ページ
 
-
-
-
 ==[notoc] 広告
-
-
-
 
 深町およびITインフラ部が製作した技術同人誌（PDF）群は電子版を配布しています。
 ものによっては印刷版も無料で配布しています（在庫かぎり）
@@ -4981,6 +4975,3 @@ $ zip example.zip text1.txt text2.txt
  ** PaaSの基本原理を学習する研究室兼インフラ部の研修用教材
 
 //footnote[lpi-2024-06-08][2024-06-08: @<href>{https://lpic-2024q2.demo.fml.org/}]
-
-
-
