@@ -20,5 +20,8 @@ do
   )                      >> $dst    
 done
 
+# post-hook
+cat contents/cm/v2.0.0.re >> $dst
+
 exit 0
 
