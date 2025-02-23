@@ -3967,6 +3967,63 @@ NISTから時刻の返信が来ている。
 
 
 
+
+
+
+=={top} @<term>{top}
+
+
+
+
+top コマンドは、OSのステータスのサマリを表示する。
+
+ *  表示は@<B>{数秒おきに自動的に更新}される
+ *  いま活発に動いているプロセスが上の方に表示される
+ ** 同じコマンドが表示され続けているなら、そのコマンドはシステムを重くしている犯人候補だ
+ *  作業時にはtopコマンド専用のターミナルを起動しておくと便利
+
+
+
+
+=== 書式
+
+
+
+
+//list[][][fontsize=xx-small]{
+$ top
+//}
+
+//list[][][fontsize=xx-small]{
+top - 01:29:59 up 1 min,  1 user,  load average: 0.09, 0.04, 0.01
+Tasks:  86 total,   1 running,  85 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.3 sy,  0.0 ni, 89.0 id,  0.6 wa,  0.0 hi,  0.0 si, 10.1 st
+MiB Mem :    970.0 total,    748.8 free,    229.1 used,    123.9 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.    740.9 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+     36 root       0 -20       0      0      0 I   0.3   0.0   0:00.01 kworker/0:1H-kblockd
+      1 root      20   0  102128  12068   9184 S   0.0   1.2   0:00.79 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kthreadd
+   ... 以下略 ... 
+//}
+
+特に注意するべき項目は次の2ヶ所だろう。
+
+ *  @<code>{load average: 0.09, 0.04, 0.01}
+ ** どれくらいシステム（OS）が忙しいのか？の目安@<fn>{loadavg}
+ *  @<code>{MiB Mem :    970.0 total,    748.8 free}
+ ** メモリ使用量。
+    この例では、
+    トータルが970MB、未使用が748MB（つまり220MBほど使用中）なので、まだまだ余力があることが分かる
+
+表示の詳細はUnixマニュアルを参照のこと。
+
+
+//footnote[loadavg][おおむねCPUコア数以下なら気にしなくてよいだろう。load averageとは、プロセスの待ち行列の長さなので、直感的な忙しさとは微妙に異なるが、システム負荷の目安とされている。]
+
+
+
 #@# 
 
 #@# 脚注の位置調整 (DEFERRED)
@@ -4125,6 +4182,7 @@ $ tracepath -n 192.159.190.35
 		Too many hops: pmtu 1280
 		Resume: pmtu 1280
 //}
+ドメイン名ではなくIPアドレスで表示されていることが分かる。
 
 
 //note[-n][-nオプションの意義]{
@@ -4881,6 +4939,48 @@ $ zip example.zip text1.txt text2.txt
    adding: text1.txt (stored 0%)
    adding: text2.txt (stored 0%)
 //}
+
+
+
+#@# 広告ページ
+
+
+
+
+==[notoc] 広告
+
+
+
+
+深町およびITインフラ部が製作した技術同人誌（PDF）群は電子版を配布しています。
+ものによっては印刷版も無料で配布しています（在庫かぎり）
+
+ * 電子版の配布場所: @<href>{https://distribution.techbooks.fml.org/} 
+ *  最新情報(github): @<href>{https://github.com/techbooks-fmlorg}
+
+//blankline
+
+2024年度刊行（技術監修あり）
+
+ *   厳選UNIXコマンド 第2版 (本書)
+ **  2025/02/28 刊行、インフラ部の最新刊！
+ **  公立千歳科学技術大学 IT インフラ部[著]、深町賢一[監修]
+ *   ITインフラ演習環境 hands-on-base 0.3.0 の設計と実装
+ **  技術: Unixコマンド(シェル)、docker-compose
+ **  LPI Webinar@<fn>{lpi-2024-06-08}用に開発した環境です。
+     これはインフラ部の成果物ではなく、作者は深町のみ。
+     ただ、このシステムがインフラ部のシステムや研修の元ネタとして再利用されているので、ぜひ御一読を。
+ **  企業の新人研修やインターンシップに最適と思います、どうでしょう？
+
+//blankline
+
+近刊予定(鋭意執筆中)
+
+ *  冴えないPaaS(へろく)の育て方 by 深町
+ ** 技術: HTML 1.1, CGI, Web API, Go言語, docker-compose
+ ** PaaSの基本原理を学習する研究室兼インフラ部の研修用教材
+
+//footnote[lpi-2024-06-08][2024-06-08: @<href>{https://lpic-2024q2.demo.fml.org/}]
 
 
 
