@@ -2,7 +2,7 @@
 
 =={id} @<term>{id}
 
-ユーザーIDやユーザー名、グループID、グループ名などの識別情報を出力する。
+ユーザIDやユーザ名、グループID、グループ名などの識別情報を出力する。
 自分（自分のユーザ名）の役割や権限を確認するために利用する。
 
 
@@ -36,7 +36,7 @@ $ id admin
 
 
 
-==== 実行結果 （ユーザ名がadminのユーザ情報を出力する場合）
+==== 実行結果 （ユーザadminの情報を出力する場合）
 
 //list[][][fontsize=xx-small]{
 $ id admin
@@ -46,7 +46,7 @@ uid=1000(admin) gid=1000(admin) groups=1000(admin),4(adm),20(dialout),24(cdrom),
 
  * uid=1000(admin):				ユーザ名がadmin、ユーザIDが1000
  * gid=1000(admin):				グループ名がadmin、グループIDが1000
- * groups=1000(admin),4(adm),20(dialout):	ユーザadminはadmin,adm,dialoutグループにも所属している
+ * groups=1000(admin),4(adm),20(dialout):	ユーザadminは上述のデフォルトグループadminに加えてadmとdialoutグループにも所属している
 
 
 
@@ -59,7 +59,7 @@ uid=1000(admin) gid=1000(admin) groups=1000(admin),4(adm),20(dialout),24(cdrom),
 $ id
 uid=1000(admin) gid=1000(admin) groups=1000(admin),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev)
 //}
-出力がadminの場合と同じであることに注意してほしい。
+出力がユーザadminの場合と同じであることに注意してほしい。
 
 
 

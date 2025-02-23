@@ -61,8 +61,8 @@ domain name pointerの右に続く
 //note[host-dig-and-nslookup][host, dig, nslookupコマンド]{
 
 @<idx>{host} と似たコマンドとして、@<idx>{dig} と @<idx>{nslookup} も存在する。
-これら3つのうち、どれがデフォルトで使えるか？はOSごとにマチマチであるなので注意しよう。
-もちろんインストールすれば使用できる。
+これら3つのうち、どれがデフォルトで使えるか？はOSごとにマチマチなので注意しよう。
+もちろんインストールすれば、どの環境でも使用できる。
 
 ちなみに、Windows の場合は、nslookup コマンドが標準搭載されている。
 

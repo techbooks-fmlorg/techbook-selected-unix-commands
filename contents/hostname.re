@@ -1,11 +1,11 @@
 #@# 
 
-//footnote[hostname][@<B>{ホスト名}とは、各機器に便宜上つける名前である。たいていは、サーバの役割が分かるような名前をつける。例：メールサーバはmail、ファイルサーバはfs]
+//footnote[hostname][@<B>{ホスト名}とは、各機器に便宜上つける名前だ。たいてい、サーバの役割が分かる名前をつける。@<br>{}例：メールサーバはmail、ファイルサーバはfs]
 
 =={hostname} @<term>{hostname}
 
 このコマンドを実行したコンピュータの@<idx>{ホスト名((ほすとめい))<<>>を表示する((をひょうじする))}@<fn>{hostname}。
-SSH接続している場合、接続先のホスト名が表示される。
+SSH接続している場合、接続先のホスト名が表示されることに注意。
 また、Unix 系の OS (Debian や Ubuntu など)ではホスト名の確認に加えて、ホスト名を設定することができる。
 以下に、ホスト名の確認と設定の実行例を示す。
 
@@ -62,14 +62,14 @@ $ hostname <設定したいホスト名>
 
 
 //list[][][fontsize=xx-small]{
-$ hostname debian.sample
+$ hostname debian.example.co.jp
 //}
 
 
 
 //list[][][fontsize=xx-small]{
 $ hostname
-debian.sample
+debian.example.co.jp
 //}
 
 

@@ -39,4 +39,4 @@ systemd─┬─2*[agetty]
         └─unattended-upgr
 //}
 
- * (1)の行をみると、 bash(pstreeと入力したターミナル)がpstreeを呼び出していることがわかる
+ * (1)の行をみると、 bash(pstreeを入力したターミナルに紐づいたシェル)がpstreeを呼び出していることがわかる

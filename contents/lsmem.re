@@ -39,6 +39,9 @@ Total offline memory:      0B
 ------------------------------------------------------------
 RANGE			メモリのアドレス範囲(この例では1GBを示している)
 Memory block size	1ブロック当たりのサイズ(1GB/8=128MB)
-Total online memory	使用可能なメモリサイズ(1GB)
-Total offline memory	使用不可能なメモリサイズ(このメモリはすべて利用できる)
+Total online memory	使用可能な(オンラインの)メモリサイズ(例：1GB)
+Total offline memory	使用不可能な（現在オフライン@<fn>{offine-memory}の）メモリサイズ
 //}
+
+
+//footnote[offine-memory][オフラインとは？メモリをブロック単位でオンライン/オフラインを設定できるのだが、超巨大な仮想基盤でもないかぎり使う機会のない機能に思える。詳細は@<href>{https://www.kernel.org/pub/linux/utils/util-linux/}の@<term>{chmem}のマニュアルとソースコードを参照したほうがよい]

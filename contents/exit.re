@@ -1,12 +1,13 @@
 #@#
 
-//image[windows-command-prompt][WindowsのコマンドプロンプトでAWSにsshし、作業後にexitしてWindowsに戻ってきた様子][scale=1.0]
+//image[windows-command-prompt][WindowsのコマンドプロンプトでAWS EC2にsshし、作業後にexitしてWindowsに戻ってきた様子][scale=1.0]
 
 =={exit} @<term>{exit}
 
 sshやsudoコマンドでログインしたときに@<term>{ログアウト((ろぐあうと))}できる（@<img>{windows-command-prompt}）。
-Windowsなどで、
-ターミナルアプリの画面でexitコマンドを実行した場合は、そのターミナルアプリごと閉じてしまうことに注意
+Windowsなどの
+ターミナルアプリ（例：tetaterm）上でexitコマンドを実行した場合、そのターミナルアプリごと閉じてしまうことに注意
+（注：@<img>{windows-command-prompt}は一歩手前の状態。さらにexitを入力すれば、このウインドウごと閉じてしまう）
 
 
 === 書式
@@ -18,8 +19,8 @@ $ exit
 
 === 実行例
 
-以下、Windows上のターミナルアプリ上でsshコマンドを実行し、
-EC2(AWSのサービスの一つ)上に作成したDebianのサーバにSSHログインしている前提とする
+以下、Windowsのターミナルアプリ上でsshコマンドを実行し、
+EC2上に作成したDebianのサーバにSSHログインしている前提とする
 
 //list[][][fontsize=xx-small]{
 Windowsのターミナルアプリ ---(SSH)---> Debian GNU/Linxu (EC2)
@@ -40,10 +41,9 @@ admin@16.32.64.128$ exit
 Script done.
 Connection to 16.32.64.128 closed.
 C:\Users\b2902900>
-user:~$   
 //}
 ssh先からログアウトして、Windowsのターミナルに戻る。
-出力例の最終行@<code>{user:~$ }はSSH元のPCのターミナルに戻ってきた様子。
+出力例の最終行@<code>{C:\Users\b2902900> }はSSH元のPCのターミナルに戻ってきた様子。
 
 
 ==== 実行例2 （Windowsのターミナルアプリからログアウトする）
@@ -58,4 +58,4 @@ C:\Users\b2902900> exit
 
 ==== 実行結果2
 
-ターミナルアプリの画面ごと閉じてしまう
+ターミナルアプリごと閉じてしまう
