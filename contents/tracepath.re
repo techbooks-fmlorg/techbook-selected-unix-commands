@@ -108,6 +108,7 @@ $ tracepath -n 192.159.190.35
 		Too many hops: pmtu 1280
 		Resume: pmtu 1280
 //}
+ドメイン名ではなくIPアドレスで表示されていることが分かる。
 
 
 //note[-n][-nオプションの意義]{
