@@ -4,10 +4,10 @@
 
 =={exit} @<term>{exit}
 
-sshやsudoコマンドでログインしたときに@<term>{ログアウト((ろぐあうと))}できる（@<img>{windows-command-prompt}）。
+sshやsudoコマンドでログインしたときに、ログイン先から@<term>{ログアウト((ろぐあうと))}できる（@<img>{windows-command-prompt}）。
 Windowsなどの
 ターミナルアプリ（例：tetaterm）上でexitコマンドを実行した場合、そのターミナルアプリごと閉じてしまうことに注意
-（注：@<img>{windows-command-prompt}は一歩手前の状態。さらにexitを入力すれば、このウインドウごと閉じてしまう）
+（注：@<img>{windows-command-prompt}は閉じる一歩手前の状態。さらにexitを入力すれば、このウインドウごと閉じてしまう）
 
 
 === 書式

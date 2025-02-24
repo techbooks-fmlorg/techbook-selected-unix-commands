@@ -17,7 +17,7 @@ $ ip [ options ] OBJECT COMMAND
 $ ip [ options ] OBJECT help
 //}
 
- * OBJECT部分では、
+ * OBJECT部分には、
    @<B>{address}（IPアドレス）や
    @<B>{route}（経路情報）など、
    ネットワークの構成要素を指定する。

@@ -159,7 +159,7 @@ $ aws s3 cp s3://testBucket/ファイル名 ディレクトリ名
 //list[][][fontsize=xx-small]{
 $ aws s3 cp s3://testBucket/hello.py hello.py
 //}
-S3バケットにあるhello.pyをec2内にhello.pyという名前でコピーする
+S3バケットにあるhello.pyをEC2内にhello.pyという名前でコピーする
 
 ==== 実行結果
 

@@ -58,7 +58,7 @@ drwxr-xr-x 2 user group  4096 Sep 08:14:44 htdocs
  ** @<B>{r}は読み取り権限、@<B>{w}は書き込み権限である。
     @<B>{x}はファイルとディレクトリで意味が異なる。
     ファイルの場合は実行権限つまり「プログラムとして実行できる」という意味。
-    ディレクトリの場合、そのディレクトリの中へ移動できるという意味
+    ディレクトリの場合、そのディレクトリの中を見たり/中へ移動できるという意味@<fn>{ls-searchable}
  *  1行目の@<code>{htdocs}は（左端がdなので）ディレクトリ
  ** ユーザは@<B>{rwx}、
     グループ(グループ名:groupに属しているユーザ)の権限は@<B>{r-x}、
@@ -92,3 +92,6 @@ $ ls -a
 .ssh .bash_history test.txt htdocs python.py 
 //}
 隠しディレクトリである.sshと隠しファイルの.bash_historyも表示されている。
+
+
+//footnote[ls-searchable][原語のsearchable(検索〜)も不明瞭。正確な説明は難しい（@<hd>{chmod}節も参照）]

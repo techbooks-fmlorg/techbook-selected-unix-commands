@@ -21,7 +21,7 @@ $ cp コピー元 コピー先
 
 ==== 実行例１
 
-いま作業しているディレクトリ以下には、次のようにhtdocsフォルダとtest.txtがある。
+いま作業しているディレクトリ以下には、次のようにhtdocsフォルダとtest.txtファイルがある。
 
 //list[][][fontsize=xx-small]{
 $ tree

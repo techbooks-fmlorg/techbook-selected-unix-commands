@@ -1,7 +1,7 @@
 #@# 
 
 #@# 脚注の位置調整 (DEFERRED)
-//footnote[NCOM][NTTコミュニケーション。旧Verioを買収して世界規模の長距離回線を擁するTier-1のキャリア。業界人はNTT COMではなくNCOMと呼ぶ。電車の中で「NCOMが〜」とか電話してる同業者がいるとドキドキするよね？(w)]
+//footnote[NCOM][NTTコミュニケーション。旧Verioを買収して世界規模の長距離回線を擁するTier-1のキャリア。業界人はNTT COMではなくNCOM（えぬこむ）と呼ぶ。電車の中で「NCOMが〜」とか電話してる同業者がいるとドキドキするよね？(w)]
 //footnote[comcast][アメリカのケーブルテレビ大手]
 
 =={tracepath} @<term>{tracepath}

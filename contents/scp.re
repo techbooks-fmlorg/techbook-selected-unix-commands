@@ -25,7 +25,7 @@ $ scp [options] SOURCE... TARGET
 
 ==== 実行例 
 
-sampleファイルを、exampleという名のサーバ上の/home/testディレクトリへコピーしたい
+sample.txtファイルを、exampleという名のサーバ上の/home/testディレクトリへコピーしたい
 
 //list[][][fontsize=xx-small]{
 $ scp sample.txt testuser@example:/home/test/
