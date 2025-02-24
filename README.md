@@ -16,14 +16,20 @@ Re:VIEWの使い方は
 
 contents/ 以下に原稿を書きます。
 コマンドごとにファイルを分けて1コマンド1節(section)で書いてください。
-ファイル名はコマンド名です。
+ファイル名はコマンド名です（例：contents/ssh.re）。
 
-印刷版での原稿の並びや章節の組立て方はetc/catalog.yml.printを編集します。
-電子版は章を自動生成しています(必要であればMakefileとutils以下を調整してください)
+- 第２章はcontens/${command}.reファイル群から自動的に合成されます
+    - ファイル群の合成の仕方はMakefileとutils以下を参照（必要なら調整）してください
+- 一方、その他のファイル（下記）は直接編集してください
+    - 前書き（contents/00-preface.re）
+    - 第１章（contents/10-unix-cli-overview.re）
+    - 後書き（contents/99-postscript.re）
+    - 表紙　（images/cover_a5.{odg,pdf}）
+    - CMページ（[contents/cm/](contents/cm/)）
 
-前書き(contents/00-preface.re)と後書き(contents/99-postscript.re)は直接編集あるのみです。
-表紙(images/cover_a5.pdf)も直接編集あるのみです。
-
+なお、v2には電子版と印刷版の区別は、ありません。
+~~印刷版での原稿の並びや章節の組立て方はetc/catalog.yml.printを編集します。~~
+~~電子版は章を自動生成しています(必要であればMakefileとutils以下を調整してください)~~
 
 
 ### PDFの作成方法
@@ -45,15 +51,19 @@ Makefileの中にルールとしてビルド方法が定義されています。
 ### 生成物
 
 うまくビルドできれば、`release/`以下にPDFファイルが生成されます。
-
+```
+release/selected-unix-commands.2.0.0.pdf
+```
+このようにバージョン番号つきのファイル名になっています。
+バージョン名はsemantic versioningに従ってください。
+なお、v1時代には
 ```
 release/selected-unix-commands.ebook.1.0.0.pdf
 release/selected-unix-commands.print.1.0.0.pdf
 ```
-このようにバージョン番号つきのファイル名になっていて、
-拡張子.ebookが電子版、拡張子.printが印刷版です
-
-バージョン名はsemantic versioningに従ってください
+のように拡張子があり、
+.ebookが電子版、拡張子.printが印刷版でしたが、
+この拡張子部分はv2.0.0では廃止されました。
 
 
 
