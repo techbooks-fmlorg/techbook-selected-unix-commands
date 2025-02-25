@@ -45,6 +45,10 @@ do-chown:
 do-50-cmd-build: contents/*.re
 	@ sh utils/50-cmd-build.sh
 
+log: do-log-tail
+do-log-tail:
+	@ git log HEAD^^^..HEAD
+
 do-clean:
 	@ rm -fv config.yml catalog.yml config-starter.yml
 
