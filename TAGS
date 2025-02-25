@@ -70,3 +70,11 @@ release-1-0-0
 
 v2.0.0-rc.1
 	same as v2.0.0-alpha.5
+
+v2.0.0
+	almost same as rc.1	
+	fix minor typos
+
+v2.0.1
+	convert images to "colorspace: Grayscale".
+	updated README and Makefile.
