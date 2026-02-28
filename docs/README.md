@@ -8,7 +8,7 @@ ITインフラ修行中の三年生(公立千歳科学技術大学ITインフラ
 
 PDFを配布しています。
 
-- [第２版２刷 (v2.0.2)](Archives/selected-unix-commands.2.0.2.pdf)
+- [第２版３刷 (v2.0.3)](Archives/selected-unix-commands.2.0.3.pdf)
 
 なお、学内の方は、このPDFの印刷版を無料配布しているので手に取ってみてください。
 
